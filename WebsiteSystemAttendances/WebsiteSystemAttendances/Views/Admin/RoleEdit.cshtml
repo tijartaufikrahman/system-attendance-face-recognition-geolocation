@@ -1,0 +1,37 @@
+@model Newtonsoft.Json.Linq.JObject
+@{ ViewData["Title"] = "Edit Role"; }
+
+<div style="max-width:500px;">
+    <div class="form-card">
+        <h3 style="margin-bottom:1.5rem;font-size:1rem;"><i class="fas fa-user-tag" style="color:#6b7280;"></i> Edit Role</h3>
+
+        <form method="post" asp-controller="Admin" asp-action="RoleEdit" asp-route-id="@Model?["id"]" data-ajax-form data-ajax-redirect="@Url.Action("Roles", "Admin")">
+            <div class="form-group">
+                <label>Nama Role *</label>
+                <input type="text" class="form-control" name="name" required value="@(Model?["name"] ?? "")" placeholder="Nama role" />
+            </div>
+            <div class="form-group">
+                <label>Platform *</label>
+                <select class="form-control" name="platform" required>
+                    <option value="">-- Pilih Platform --</option>
+                    @if (Model?["platform"]?.ToString() == "web")
+                    {
+                        <option value="web" selected>🌐 Website (Admin Panel)</option>
+                        <option value="mobile">📱 Mobile (Absensi Karyawan)</option>
+                    }
+                    else
+                    {
+                        <option value="web">🌐 Website (Admin Panel)</option>
+                        <option value="mobile" selected>📱 Mobile (Absensi Karyawan)</option>
+                    }
+                </select>
+                <small style="color:#9ca3af;font-size:11px;margin-top:4px;display:block;">Tentukan apakah role ini untuk akses website atau mobile app</small>
+            </div>
+
+            <div style="display:flex;gap:0.5rem;margin-top:1.5rem;">
+                <button type="submit" class="btn btn-primary" style="flex:1;padding:12px;"><i class="fas fa-save"></i> Perbarui Role</button>
+                <a asp-controller="Admin" asp-action="Roles" class="btn btn-outline" style="padding:12px;"><i class="fas fa-arrow-left"></i> Batal</a>
+            </div>
+        </form>
+    </div>
+</div>

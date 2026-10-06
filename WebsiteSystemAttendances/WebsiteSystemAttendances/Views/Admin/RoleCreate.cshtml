@@ -1,0 +1,36 @@
+@{ ViewData["Title"] = "Tambah Role"; }
+
+<div style="max-width:500px;">
+    <div class="form-card">
+        <h3 style="margin-bottom:1.5rem;font-size:1rem;"><i class="fas fa-user-tag" style="color:#6b7280;"></i> Tambah Role</h3>
+
+        <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px 16px;margin-bottom:1.5rem;">
+            <p style="margin:0;font-size:0.8rem;color:#6b7280;">
+                <strong>Role</strong> menentukan hak akses pengguna:<br>
+                • 🌐 <strong>Website</strong> → Akses admin panel (Admin HR)<br>
+                • 📱 <strong>Mobile</strong> → Akses mobile app untuk absensi karyawan
+            </p>
+        </div>
+
+        <form method="post" asp-controller="Admin" asp-action="RoleCreate" data-ajax-form data-ajax-redirect="@Url.Action("Roles", "Admin")">
+            <div class="form-group">
+                <label>Nama Role *</label>
+                <input type="text" class="form-control" name="name" required placeholder="Contoh: Admin HR, Karyawan, Supervisor" />
+            </div>
+            <div class="form-group">
+                <label>Platform *</label>
+                <select class="form-control" name="platform" required>
+                    <option value="">-- Pilih Platform --</option>
+                    <option value="web">🌐 Website (Admin Panel)</option>
+                    <option value="mobile">📱 Mobile (Absensi Karyawan)</option>
+                </select>
+                <small style="color:#9ca3af;font-size:11px;margin-top:4px;display:block;">Tentukan apakah role ini untuk akses website atau mobile app</small>
+            </div>
+
+            <div style="display:flex;gap:0.5rem;margin-top:1.5rem;">
+                <button type="submit" class="btn btn-primary" style="flex:1;padding:12px;"><i class="fas fa-save"></i> Simpan Role</button>
+                <a asp-controller="Admin" asp-action="Roles" class="btn btn-outline" style="padding:12px;"><i class="fas fa-arrow-left"></i> Batal</a>
+            </div>
+        </form>
+    </div>
+</div>

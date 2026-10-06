@@ -1,0 +1,39 @@
+@model Newtonsoft.Json.Linq.JObject
+@{ ViewData["Title"] = "Edit Jabatan"; }
+
+<div style="max-width:500px;">
+    <div class="form-card">
+        <h3 style="margin-bottom:1.5rem;font-size:1rem;"><i class="fas fa-edit" style="color:#7c3aed;"></i> Edit Jabatan</h3>
+        <form method="post" asp-controller="Admin" asp-action="PositionEdit" asp-route-id="@Model?["id"]" data-ajax-form data-ajax-redirect="@Url.Action("Positions", "Admin")">
+            <div class="form-group">
+                <label>Nama Jabatan *</label>
+                <input type="text" class="form-control" name="name" required value="@(Model?["name"] ?? "")" placeholder="Contoh: Staff IT" />
+            </div>
+            <div class="form-group">
+                <label>Deskripsi</label>
+                <textarea class="form-control" name="description" rows="2" placeholder="Deskripsi tugas jabatan">@(Model?["description"] ?? "")</textarea>
+            </div>
+            <div class="form-group">
+                <label>Schedule Default *</label>
+                <select class="form-control" name="defaultScheduleId" required>
+                    <option value="">-- Pilih Jam Kerja --</option>
+                    @if (ViewBag.Schedules != null) {
+                        var currentSchedId = (int?)Model?["defaultScheduleId"];
+                        @foreach (var s in (Newtonsoft.Json.Linq.JArray)ViewBag.Schedules) {
+                            var isSelected = (int?)s["id"] == currentSchedId;
+                            if (isSelected) {
+                                <option value="@s["id"]" selected>@s["name"] (@s["clockIn"] - @s["clockOut"])</option>
+                            } else {
+                                <option value="@s["id"]">@s["name"] (@s["clockIn"] - @s["clockOut"])</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+            <div style="display:flex;gap:0.5rem;margin-top:1.5rem;">
+                <button type="submit" class="btn btn-primary" style="flex:1;padding:12px;"><i class="fas fa-save"></i> Perbarui</button>
+                <a asp-controller="Admin" asp-action="Positions" class="btn btn-outline" style="padding:12px;"><i class="fas fa-arrow-left"></i> Batal</a>
+            </div>
+        </form>
+    </div>
+</div>

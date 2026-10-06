@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WebsiteSystemAttendances.props" />
+</Project>

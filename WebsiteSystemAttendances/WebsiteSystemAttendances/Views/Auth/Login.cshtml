@@ -1,0 +1,403 @@
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Attendance System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; min-height: 100vh; display: flex; background:#f8fafc; }
+
+        /* === LEFT PANEL (Branding) === */
+        .login-left {
+            flex: 1;
+            background: linear-gradient(145deg, #0f172a 0%, #164e63 58%, #0f766e 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3.5rem clamp(2rem, 6vw, 6rem);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .login-left::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(45, 212, 191, 0.14);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+        .login-left::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(125, 211, 252, 0.10);
+            border-radius: 50%;
+            bottom: -80px;
+            left: -80px;
+        }
+        .brand-icon {
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .brand-title { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; z-index: 1; }
+        .brand-subtitle { font-size: 1rem; opacity: 0.8; margin-bottom: 3rem; z-index: 1; }
+        .brand-copy { z-index:1; max-width:520px; }
+        .brand-eyebrow { font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#99f6e4; margin-bottom:1rem; }
+        .brand-footer { z-index:1; width:100%; max-width:520px; padding-top:1.25rem; border-top:1px solid rgba(255,255,255,.16); color:rgba(255,255,255,.62); font-size:.75rem; }
+        .brand-features { z-index: 1; max-width: 350px; }
+        .brand-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+        .brand-feature i {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* === RIGHT PANEL (Login Form) === */
+        .login-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem clamp(1.25rem, 5vw, 5rem);
+            background: #f8fafc;
+        }
+        .login-card {
+            width: 100%;
+            max-width: 440px;
+            background:#fff;
+            border:1px solid #e5e7eb;
+            border-radius:20px;
+            padding:2.25rem;
+            box-shadow:0 18px 45px rgba(15,23,42,.08);
+        }
+        .login-card h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 0.25rem;
+        }
+        .login-card .subtitle {
+            color: #6b7280;
+            margin-bottom: 1.75rem;
+            font-size:.9rem;
+        }
+
+        /* === TABS === */
+        .login-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            background: #f1f5f9;
+            border-radius: 12px;
+            padding: 4px;
+        }
+        .login-tab {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: transparent;
+            color: #6b7280;
+        }
+        .login-tab.active {
+            background: #fff;
+            color: #0f172a;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .login-tab:hover:not(.active) { color: #374151; }
+
+        /* === FORM === */
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+        }
+        .form-input {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1px solid #dbe3ec;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            outline: none;
+        }
+        .form-input:focus {
+            border-color: #0f766e;
+            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+        }
+        .form-input::placeholder { color:#b6beca; }
+        .form-input i { color: #9ca3af; margin-right: 8px; }
+        .input-wrapper {
+            position: relative;
+        }
+        .input-wrapper .form-input { padding-left: 42px; }
+        .input-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #9ca3af;
+            cursor: pointer;
+        }
+
+        /* === BUTTONS === */
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 0.5rem;
+            box-shadow:0 6px 14px rgba(15,23,42,.08);
+        }
+        .btn-platform {
+            background: linear-gradient(135deg, #0f172a, #164e63);
+            color: white;
+        }
+        .btn-platform:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15, 23, 42, 0.25); }
+        .btn-company {
+            background: linear-gradient(135deg, #0f766e, #115e59);
+            color: white;
+        }
+        .btn-company:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15, 118, 110, 0.3); }
+
+        /* === ERROR === */
+        .alert-error {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+            padding: 12px 16px;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* === PANELS === */
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; animation: fadeIn 0.3s ease; }
+        @@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* === RESPONSIVE === */
+        @@media (max-width: 768px) {
+            body { flex-direction: column; }
+            .login-left { padding: 2rem; min-height: auto; }
+            .brand-features { display: none; }
+            .brand-title { font-size: 1.5rem; }
+            .brand-icon { width: 70px; height: 70px; font-size: 1.8rem; margin-bottom: 1rem; }
+            .login-right { padding: 1.5rem; }
+            .login-card { padding:1.5rem; border-radius:16px; box-shadow:0 10px 28px rgba(15,23,42,.07); }
+            .brand-copy { text-align:center; }
+            .brand-eyebrow { margin-top:1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- LEFT PANEL -->
+<div class="login-left">
+    <div class="brand-copy">
+        <div class="brand-icon">
+            <i class="fas fa-fingerprint"></i>
+        </div>
+        <div class="brand-eyebrow">Smart Workforce Platform</div>
+        <h1 class="brand-title">ATTENDANCE SYSTEM</h1>
+        <p class="brand-subtitle">Sistem manajemen absensi berbasis geolokasi dan face recognition untuk operasional yang lebih akurat.</p>
+        <div class="brand-features">
+        <div class="brand-feature">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Geofencing & GPS Tracking untuk presensi akurat</span>
+        </div>
+        <div class="brand-feature">
+            <i class="fas fa-face-smile"></i>
+            <span>Face Recognition untuk autentikasi kehadiran</span>
+        </div>
+        <div class="brand-feature">
+            <i class="fas fa-clock"></i>
+            <span>Manajemen jadwal kerja & lembur otomatis</span>
+        </div>
+        <div class="brand-feature">
+            <i class="fas fa-chart-bar"></i>
+            <span>Dashboard monitoring & laporan real-time</span>
+        </div>
+        </div>
+    </div>
+    <div class="brand-footer">
+        <i class="fas fa-lock"></i> Data Anda terlindungi dengan autentikasi berlapis
+    </div>
+</div>
+
+<!-- RIGHT PANEL -->
+<div class="login-right">
+    <div class="login-card">
+        <h2>Selamat Datang</h2>
+        <p class="subtitle">Masuk ke akun Anda untuk melanjutkan</p>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert-error">
+                <i class="fas fa-exclamation-circle"></i>
+                <span>@ViewBag.Error</span>
+            </div>
+        }
+
+        <!-- Tab Switcher -->
+        <div class="login-tabs">
+            <button type="button" class="login-tab active" onclick="switchTab('platform')" id="tab-platform">
+                <i class="fas fa-crown"></i> Super Admin
+            </button>
+            <button type="button" class="login-tab" onclick="switchTab('company')" id="tab-company">
+                <i class="fas fa-building"></i> Admin HR
+            </button>
+        </div>
+
+        <!-- Platform Login -->
+        <div class="tab-panel active" id="panel-platform">
+            <form method="post" asp-controller="Auth" asp-action="PlatformLogin">
+                <div class="form-group">
+                    <label>Email Super Admin</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" class="form-input" name="email" placeholder="superadmin@system.com" autocomplete="username" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" class="form-input" name="password" id="password-platform" placeholder="Masukkan password" autocomplete="current-password" required />
+                        <button type="button" class="toggle-password" onclick="togglePass('password-platform', this)">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="btn-login btn-platform">
+                    <i class="fas fa-sign-in-alt"></i> Masuk sebagai Platform
+                </button>
+            </form>
+            <p style="text-align:center; margin-top:1rem; color:#9ca3af; font-size:0.8rem;">
+                <i class="fas fa-shield-halved"></i> Akses khusus penyedia layanan platform
+            </p>
+        </div>
+
+        <!-- Company Login -->
+        <div class="tab-panel" id="panel-company">
+            <form method="post" asp-controller="Auth" asp-action="Login">
+                <div class="form-group">
+                    <label>Email Admin / Karyawan</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" class="form-input" name="email" placeholder="admin@perusahaan.com" autocomplete="username" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" class="form-input" name="password" id="password-company" placeholder="Masukkan password" autocomplete="current-password" required />
+                        <button type="button" class="toggle-password" onclick="togglePass('password-company', this)">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="btn-login btn-company">
+                    <i class="fas fa-sign-in-alt"></i> Masuk sebagai Perusahaan
+                </button>
+            </form>
+            <p style="text-align:center; margin-top:1rem; color:#9ca3af; font-size:0.8rem;">
+                <i class="fas fa-building"></i> Akun Admin HR atau Karyawan perusahaan
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function switchTab(tab) {
+        // Reset all
+        document.querySelectorAll('.login-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+
+        // Activate
+        document.getElementById('tab-' + tab).classList.add('active');
+        document.getElementById('panel-' + tab).classList.add('active');
+    }
+
+    function togglePass(id, btn) {
+        const input = document.getElementById(id);
+        const icon = btn.querySelector('i');
+        if (input.type === 'password') {
+            input.type = 'text';
+            icon.classList.replace('fa-eye', 'fa-eye-slash');
+        } else {
+            input.type = 'password';
+            icon.classList.replace('fa-eye-slash', 'fa-eye');
+        }
+    }
+</script>
+
+</body>
+</html>

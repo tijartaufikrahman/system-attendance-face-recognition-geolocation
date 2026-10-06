@@ -1,0 +1,36 @@
+@model Newtonsoft.Json.Linq.JObject
+@{
+    ViewData["Title"] = "Pengaturan Absensi";
+    var radius = int.TryParse(Model?["radiusMeters"]?.ToString(), out var parsedRadius) ? parsedRadius : 50;
+    var tolerance = double.TryParse(Model?["faceTolerance"]?.ToString(), System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var parsedTolerance) ? parsedTolerance : 0.45;
+    var invariantTolerance = tolerance.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+    var percent = tolerance * 100;
+}
+
+<div class="card" style="max-width:760px;">
+    <div class="card-header">
+        <h3><i class="fas fa-sliders-h" style="color:#0f766e;margin-right:.45rem;"></i>Pengaturan Face Recognition & Lokasi</h3>
+    </div>
+    <div class="card-body">
+        <p style="color:#64748b;font-size:.85rem;margin-bottom:1.5rem;">
+            Nilai ini berlaku untuk seluruh karyawan dalam perusahaan. Semakin tinggi akurasi wajah, semakin ketat kecocokan wajah yang diterima.
+        </p>
+        <form asp-action="AttendanceSettingsSave" method="post" data-ajax-form data-ajax-redirect="@Url.Action("AttendanceSettings")">
+            <div class="mb-4">
+                <label for="faceTolerance" class="form-label fw-semibold">Akurasi minimum wajah</label>
+                <div class="d-flex align-items-center gap-3">
+                    <input id="faceTolerance" name="faceTolerance" type="range" class="form-range" min="0.10" max="0.99" step="0.01" value="@invariantTolerance"
+                           oninput="document.getElementById('faceToleranceValue').textContent = (this.value * 100).toFixed(0) + '%'">
+                    <strong id="faceToleranceValue" style="min-width:52px;color:#0f766e;">@percent.ToString("0")%</strong>
+                </div>
+                <div class="form-text">Rentang API: 0.10 - 0.99. Rekomendasi awal: 45% - 70%.</div>
+            </div>
+            <div class="mb-4">
+                <label for="radiusMeters" class="form-label fw-semibold">Toleransi radius lokasi (meter)</label>
+                <input id="radiusMeters" name="radiusMeters" type="number" class="form-control" min="1" max="10000" value="@radius" required>
+                <div class="form-text">Karyawan harus berada dalam radius ini untuk Hadir dan Lembur.</div>
+            </div>
+            <button type="submit" class="btn btn-success"><i class="fas fa-save me-1"></i>Simpan Pengaturan</button>
+        </form>
+    </div>
+</div>

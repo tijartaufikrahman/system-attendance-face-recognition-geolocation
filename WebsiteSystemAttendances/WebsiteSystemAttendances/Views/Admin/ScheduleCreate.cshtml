@@ -1,0 +1,108 @@
+@{ ViewData["Title"] = "Tambah Jam Kerja"; }
+
+@section Styles { <style>
+    .sch-form-wrap { max-width:520px; }
+
+    .sch-form-card {
+        background:#fff; border:1px solid #e8eef5; border-radius:16px;
+        box-shadow:0 6px 24px rgba(15,23,42,.05); overflow:hidden;
+    }
+
+    /* Header */
+    .sch-form-header {
+        padding:22px 28px; border-bottom:1px solid #f1f5f9;
+        display:flex; align-items:center; gap:12px;
+    }
+    .sch-form-header-icon {
+        width:42px; height:42px; border-radius:12px;
+        display:flex; align-items:center; justify-content:center;
+        background:#f0fdfa; color:#0f766e; font-size:1rem;
+    }
+    .sch-form-header-text h3 { margin:0; font-size:1rem; font-weight:700; color:#0f172a; }
+    .sch-form-header-text p { margin:3px 0 0; font-size:.75rem; color:#94a3b8; }
+
+    /* Body */
+    .sch-form-body { padding:28px; }
+
+    /* Form groups */
+    .sch-fg { margin-bottom:20px; }
+    .sch-fg:last-child { margin-bottom:0; }
+    .sch-fg label {
+        display:block; font-size:.78rem; font-weight:600; color:#374151;
+        margin-bottom:7px;
+    }
+    .sch-fg label .required { color:#dc2626; margin-left:2px; }
+    .sch-fg input {
+        width:100%; padding:11px 14px; border:1.5px solid #e2e8f0; border-radius:9px;
+        font-size:.88rem; color:#0f172a; background:#fff;
+        outline:none; transition:border-color .2s, box-shadow .2s; box-sizing:border-box;
+    }
+    .sch-fg input:focus {
+        border-color:#0f766e; box-shadow:0 0 0 3px rgba(15,118,110,.1);
+    }
+    .sch-fg input::placeholder { color:#c1cad6; }
+
+    /* Time fields side by side */
+    .sch-time-grid {
+        display:grid; grid-template-columns:1fr 1fr; gap:16px;
+    }
+    .sch-time-preview {
+        display:flex; align-items:center; gap:8px;
+        padding:10px 14px; border-radius:10px; background:#f8fafc; border:1px solid #f1f5f9;
+        margin-top:10px;
+    }
+    .sch-time-preview-label { font-size:.7rem; color:#94a3b8; font-weight:500; }
+    .sch-time-preview-value { font-size:.85rem; font-weight:700; color:#0f172a; font-family:'SF Mono','Consolas',monospace; }
+
+    /* Divider */
+    .sch-form-divider {
+        height:1px; background:#f1f5f9; margin:24px 0;
+    }
+
+    /* Actions */
+    .sch-form-actions {
+        display:flex; gap:10px; margin-top:24px;
+    }
+    .sch-form-actions .btn { flex:1; padding:12px; font-size:.82rem; }
+</style> }
+
+<div class="sch-form-wrap">
+    <div class="sch-form-card">
+        <div class="sch-form-header">
+            <div class="sch-form-header-icon"><i class="fas fa-clock"></i></div>
+            <div class="sch-form-header-text">
+                <h3>Tambah Jam Kerja</h3>
+                <p>Atur nama shift dan jam masuk/keluar</p>
+            </div>
+        </div>
+        <div class="sch-form-body">
+            <form method="post" asp-controller="Admin" asp-action="ScheduleCreate" data-ajax-form data-ajax-redirect="@Url.Action("Schedules", "Admin")">
+
+                <div class="sch-fg">
+                    <label>Nama Shift <span class="required">*</span></label>
+                    <input type="text" name="name" required placeholder="Contoh: Shift Pagi, Shift Malam" />
+                </div>
+
+                <div class="sch-time-grid">
+                    <div class="sch-fg">
+                        <label>Jam Masuk <span class="required">*</span></label>
+                        <input type="time" name="clockIn" required />
+                    </div>
+                    <div class="sch-fg">
+                        <label>Jam Keluar <span class="required">*</span></label>
+                        <input type="time" name="clockOut" required />
+                    </div>
+                </div>
+
+                <div class="sch-form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Simpan
+                    </button>
+                    <a asp-controller="Admin" asp-action="Schedules" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Batal
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

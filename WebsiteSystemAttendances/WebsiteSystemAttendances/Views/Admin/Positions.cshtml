@@ -1,0 +1,173 @@
+@model Newtonsoft.Json.Linq.JArray
+@{
+    ViewData["Title"] = "Jabatan";
+    var schedules = ViewBag.Schedules as Newtonsoft.Json.Linq.JArray;
+}
+
+@section Styles { <style>
+    .sch-page-title { font-size: 1.125rem; font-weight: 700; color: #0f172a; margin: 0; }
+    .sch-card { background: #fff; border-radius: 10px; box-shadow: 0 1px 3px rgba(15,23,42,.06); border: 1px solid #e2e8f0; }
+    .sch-card-head { padding: 20px 20px 16px; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; }
+    .sch-controls { padding: 16px 20px; border-bottom: 1px solid #f1f5f9; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+    .sch-controls-left, .sch-controls-right { display: flex; align-items: center; gap: 8px; font-size: .85rem; color: #475569; }
+    .sch-controls select, .sch-controls input[type="text"] { border: 1px solid #cbd5e1; border-radius: 6px; font-size: .85rem; padding: 6px 10px; outline: none; transition: border-color .2s; }
+    .sch-controls select:focus, .sch-controls input[type="text"]:focus { border-color: #0f766e; box-shadow: 0 0 0 2px rgba(15,118,110,.12); }
+    .sch-controls input[type="text"] { width: 240px; }
+    .sch-table { width: 100%; border-collapse: collapse; font-size: .85rem; color: #475569; }
+    .sch-table thead th { background: #f8fafc; font-size: .7rem; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: .4px; padding: 12px 20px; border-bottom: 1px solid #e2e8f0; text-align: left; white-space: nowrap; cursor: pointer; user-select: none; }
+    .sch-table thead th:hover { background: #f1f5f9; }
+    .sch-table thead th.text-center { text-align: center; }
+    .sch-table thead th.text-right { text-align: right; }
+    .sch-table tbody tr { border-bottom: 1px solid #f1f5f9; transition: background .15s; }
+    .sch-table tbody tr:hover { background: #f8fafc; }
+    .sch-table tbody td { padding: 14px 20px; }
+    .sch-table tbody td.text-center { text-align: center; }
+    .sch-table tbody td.text-right { text-align: right; }
+    .sch-table tbody td.font-medium { font-weight: 600; color: #0f172a; }
+    .sch-action-group { display: flex; align-items: center; justify-content: flex-end; gap: 6px; }
+    .sch-btn-action { display: inline-flex; align-items: center; gap: 5px; padding: 5px 12px; border-radius: 6px; font-size: .72rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: all .2s; border: none; }
+    .sch-btn-edit { background: #fff; color: #475569; border: 1px solid #cbd5e1; }
+    .sch-btn-edit:hover { background: #f1f5f9; color: #1e293b; }
+    .sch-btn-delete { background: #fff; color: #dc2626; border: 1px solid #fecaca; }
+    .sch-btn-delete:hover { background: #fef2f2; }
+    .sch-footer { padding: 16px 20px; border-top: 1px solid #f1f5f9; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+    .sch-footer-info { font-size: .85rem; color: #64748b; }
+    .sch-pagination { display: flex; align-items: center; gap: 4px; font-size: .85rem; }
+    .sch-pagination button { padding: 4px 10px; border: none; background: transparent; color: #94a3b8; cursor: not-allowed; font-size: .82rem; border-radius: 4px; }
+    .sch-pagination button:disabled { opacity: .5; }
+    .sch-pagination .page-active { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 6px; font-weight: 600; color: #334155; }
+    .sch-btn-add { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 8px; font-size: .85rem; font-weight: 600; background: #064e3b; color: #fff; text-decoration: none; border: none; cursor: pointer; transition: background .2s; box-shadow: 0 1px 3px rgba(6,78,59,.25); }
+    .sch-btn-add:hover { background: #047857; }
+    .sch-badge { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 20px; font-size: .72rem; font-weight: 600; }
+    .sch-badge-schedule { background: #ede9fe; color: #6d28d9; }
+</style> }
+
+<div class="sch-card">
+    <div class="sch-card-head">
+        <h3 class="sch-page-title">Jabatan</h3>
+        <a asp-controller="Admin" asp-action="PositionCreate" class="sch-btn-add">
+            <i class="fas fa-plus"></i> Tambah Jabatan
+        </a>
+    </div>
+    <div class="sch-controls">
+        <div class="sch-controls-left">
+            <span>Tampilkan</span>
+            <select id="dtPageSize">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+            </select>
+        </div>
+        <div class="sch-controls-right">
+            <span>Cari:</span>
+            <input type="text" id="dtSearch" placeholder="">
+        </div>
+    </div>
+    <div style="overflow-x:auto;">
+        <table class="sch-table" id="dtTable">
+            <thead>
+                <tr>
+                    <th class="text-center" style="width:60px;">#</th>
+                    <th>NAMA JABATAN</th>
+                    <th>DESKRIPSI</th>
+                    <th>JAM KERJA DEFAULT</th>
+                    <th class="text-right">AKSI</th>
+                </tr>
+            </thead>
+            <tbody id="dtBody">
+                @{ var idx = 0; }
+                @if (Model != null && Model.Count > 0)
+                {
+                    foreach (var p in Model)
+                    {
+                        idx++;
+                        var name = p["name"]?.ToString() ?? "";
+                        var desc = p["description"]?.ToString();
+                        var schedId = (int?)p["defaultScheduleId"];
+                        var sched = schedules?.FirstOrDefault(s => (int?)s["id"] == schedId);
+                        var schedName = sched != null ? $"{sched["name"]} ({sched["clockIn"]} - {sched["clockOut"]})" : (schedId.HasValue ? $"Schedule #{schedId}" : "-");
+                        <tr class="dt-row" data-name="@name.ToLower()">
+                            <td class="text-center">@idx</td>
+                            <td class="font-medium"><i class="fas fa-briefcase" style="color:#7c3aed;margin-right:6px;"></i>@name</td>
+                            <td>@(string.IsNullOrWhiteSpace(desc) ? "-" : desc)</td>
+                            <td><span class="sch-badge sch-badge-schedule"><i class="fas fa-clock"></i> @schedName</span></td>
+                            <td class="text-right">
+                                <div class="sch-action-group">
+                                    <a asp-controller="Admin" asp-action="PositionEdit" asp-route-id="@p["id"]" class="sch-btn-action sch-btn-edit">
+                                        <i class="fas fa-pen-to-square"></i> Edit
+                                    </a>
+                                    <form asp-controller="Admin" asp-action="PositionDelete" asp-route-id="@p["id"]" method="post" class="d-inline" data-ajax-delete data-confirm="Hapus jabatan @name?">
+                                        <button type="submit" class="sch-btn-action sch-btn-delete">
+                                            <i class="fas fa-trash-can"></i> Hapus
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="sch-footer">
+        <div class="sch-footer-info" id="dtFooterInfo">
+            @if (Model != null && Model.Count > 0)
+            {
+                @:Menampilkan 1 - @Model.Count dari @Model.Count data
+            }
+            else
+            {
+                @:Menampilkan 0 - 0 dari 0 data
+            }
+        </div>
+        <div class="sch-pagination">
+            <button disabled>Awal</button>
+            <button disabled><i class="fas fa-chevron-left" style="font-size:.65rem;"></i></button>
+            <span class="page-active" id="dtPageNum">1</span>
+            <button disabled><i class="fas fa-chevron-right" style="font-size:.65rem;"></i></button>
+            <button disabled>Akhir</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+(function(){
+    var tbody = document.getElementById('dtBody');
+    var search = document.getElementById('dtSearch');
+    var pSize = document.getElementById('dtPageSize');
+    var footer = document.getElementById('dtFooterInfo');
+    var pageEl = document.getElementById('dtPageNum');
+    var page = 1;
+
+    function allRows() { return Array.from(tbody.querySelectorAll('.dt-row')); }
+
+    function filtered() {
+        var q = search.value.toLowerCase().trim();
+        return allRows().filter(function(r) {
+            return !q || (r.getAttribute('data-name') || '').indexOf(q) >= 0;
+        });
+    }
+
+    function render() {
+        var ps = parseInt(pSize.value) || 10;
+        var rows = filtered();
+        var total = rows.length;
+        var tp = Math.max(1, Math.ceil(total / ps));
+        if (page > tp) { page = tp; }
+        var s = (page - 1) * ps;
+        var e = Math.min(s + ps, total);
+        allRows().forEach(function(r) { r.style.display = 'none'; });
+        rows.slice(s, e).forEach(function(r) { r.style.display = ''; });
+        footer.textContent = total > 0
+            ? 'Menampilkan ' + (s + 1) + ' - ' + e + ' dari ' + total + ' data'
+            : 'Tidak ada data';
+        pageEl.textContent = page;
+    }
+
+    search.addEventListener('input', function() { page = 1; render(); });
+    pSize.addEventListener('change', function() { page = 1; render(); });
+    render();
+})();
+</script>
+}

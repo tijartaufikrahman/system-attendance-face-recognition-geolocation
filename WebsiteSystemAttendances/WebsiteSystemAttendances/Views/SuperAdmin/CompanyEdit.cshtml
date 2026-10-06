@@ -1,0 +1,40 @@
+@model Newtonsoft.Json.Linq.JObject
+@{
+    ViewData["Title"] = "Edit Perusahaan";
+}
+
+<div style="max-width:600px;">
+    <div class="form-card">
+        <h3 style="margin-bottom:1.5rem; font-size:1rem;"><i class="fas fa-building" style="color:#7c3aed;"></i> Edit Perusahaan</h3>
+        <form method="post" asp-controller="SuperAdmin" asp-action="CompanyEdit" asp-route-id="@Model["id"]">
+            <div class="form-group">
+                <label>Nama Perusahaan *</label>
+                <input type="text" class="form-control" name="name" value="@Model["name"]" required />
+            </div>
+            <div class="form-group">
+                <label>Telepon</label>
+                <input type="text" class="form-control" name="phone" value="@Model["phone"]" />
+            </div>
+            <div class="form-group">
+                <label>Alamat</label>
+                <textarea class="form-control" name="address" rows="2">@Model["address"]</textarea>
+            </div>
+            <div class="form-group">
+                <label>Status</label>
+                <select class="form-control" name="isActive">
+                    <option value="true" selected="@(Model["isActive"]?.ToObject<bool>() == true ? "selected" : null)">Aktif</option>
+                    <option value="false" selected="@(Model["isActive"]?.ToObject<bool>() == false ? "selected" : null)">Suspended</option>
+                </select>
+            </div>
+
+            <div style="display:flex; gap:0.5rem; margin-top:1.5rem;">
+                <button type="submit" class="btn btn-primary" style="flex:1; padding:12px;">
+                    <i class="fas fa-save"></i> Update
+                </button>
+                <a asp-controller="SuperAdmin" asp-action="Companies" class="btn btn-outline" style="padding:12px;">
+                    <i class="fas fa-arrow-left"></i> Batal
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

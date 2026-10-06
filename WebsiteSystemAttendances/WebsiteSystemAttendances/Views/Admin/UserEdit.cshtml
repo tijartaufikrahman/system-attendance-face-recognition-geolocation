@@ -1,0 +1,139 @@
+@model Newtonsoft.Json.Linq.JObject
+@{
+    ViewData["Title"] = "Edit Karyawan";
+    var currentRoleId = (int?)Model?["roleId"];
+    var currentLocationId = (int?)Model?["locationId"];
+    var currentPositionId = (int?)Model?["positionId"];
+    var currentScheduleId = (int?)Model?["scheduleId"];
+    var isActive = (bool?)Model?["isActive"] ?? true;
+}
+
+<div>
+    <div class="form-card employee-form-card">
+        <h3 style="margin-bottom:1.5rem;font-size:1rem;"><i class="fas fa-user-edit" style="color:#6b7280;"></i> Edit Data Karyawan</h3><hr />
+
+        <form method="post" asp-controller="Admin" asp-action="UserEdit" asp-route-id="@Model?["id"]" data-ajax-form data-ajax-redirect="@Url.Action("Users", "Admin")">
+            <div class="employee-form-grid">
+
+            @* ====== INFO DASAR ====== *@
+            <div class="employee-form-section">
+                <h4 class="employee-form-section-title"><i class="fas fa-user-edit"></i> Edit Data Karyawan</h4>
+                
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                    <div class="form-group">
+                        <label>Nama Lengkap *</label>
+                        <input type="text" class="form-control" name="name" required value="@(Model?["name"] ?? "")" placeholder="Nama karyawan" />
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" class="form-control" name="email" required value="@(Model?["email"] ?? "")" placeholder="Email karyawan" />
+                    </div>
+                    <div class="form-group d-none">
+                        <label>Password Baru (Opsional)</label>
+                        <input type="password" class="form-control" name="password" minlength="6" placeholder="Kosongkan jika tidak diubah" disabled/>
+                    </div>
+                    <div class="form-group">
+                        <label>Status Akun</label>
+                        <select class="form-control" name="isActive">
+                            @if (isActive) {
+                                <option value="true" selected>Aktif</option>
+                                <option value="false">Nonaktif</option>
+                            } else {
+                                <option value="true">Aktif</option>
+                                <option value="false" selected>Nonaktif</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            @* ====== HAK AKSES (ROLE) ====== *@
+            <div class="employee-form-section">
+                <h4 class="employee-form-section-title"><i class="fas fa-shield-alt"></i> Hak Akses Sistem</h4>
+                <div class="form-group">
+                    <label>Role (Hak Akses) *</label>
+                    <select class="form-control" name="roleId" required>
+                        <option value="">-- Pilih Hak Akses --</option>
+                        @if (ViewBag.Roles != null) {
+                            @foreach (var r in (Newtonsoft.Json.Linq.JArray)ViewBag.Roles) {
+                                var platform = r["platform"]?.ToString() ?? "";
+                                var label = platform == "web" ? "🌐 Website" : "📱 Mobile";
+                                var selected = (int?)r["id"] == currentRoleId;
+                                if (selected) {
+                                    <option value="@r["id"]" selected>@r["name"] (@label)</option>
+                                } else {
+                                    <option value="@r["id"]">@r["name"] (@label)</option>
+                                }
+                            }
+                        }
+                    </select>
+                    <small style="color:#9ca3af;font-size:11px;margin-top:4px;display:block;">Menentukan akses sistem: Website (Admin HR) atau Mobile (Karyawan)</small>
+                </div>
+            </div>
+
+            @* ====== DATA PEKERJAAN ====== *@
+            <div class="employee-form-section">
+                <h4 class="employee-form-section-title"><i class="fas fa-briefcase"></i> Data Pekerjaan</h4>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                    <div class="form-group">
+                        <label>Jabatan / Posisi *</label>
+                        <select class="form-control" name="positionId" required>
+                            <option value="">-- Pilih Jabatan --</option>
+                            @if (ViewBag.Positions != null) {
+                                @foreach (var p in (Newtonsoft.Json.Linq.JArray)ViewBag.Positions) {
+                                    var selected = (int?)p["id"] == currentPositionId;
+                                    if (selected) {
+                                        <option value="@p["id"]" selected>@p["name"]</option>
+                                    } else {
+                                        <option value="@p["id"]">@p["name"]</option>
+                                    }
+                                }
+                            }
+                        </select>
+                        <small style="color:#9ca3af;font-size:11px;margin-top:4px;display:block;">Posisi kerja karyawan di perusahaan</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Lokasi Kantor</label>
+                        <select class="form-control" name="locationId">
+                            <option value="">-- Pilih Lokasi --</option>
+                            @if (ViewBag.Locations != null) {
+                                @foreach (var l in (Newtonsoft.Json.Linq.JArray)ViewBag.Locations) {
+                                    var selected = (int?)l["id"] == currentLocationId;
+                                    if (selected) {
+                                        <option value="@l["id"]" selected>@l["name"]</option>
+                                    } else {
+                                        <option value="@l["id"]">@l["name"]</option>
+                                    }
+                                }
+                            }
+                        </select>
+                        <small style="color:#9ca3af;font-size:11px;margin-top:4px;display:block;">Lokasi kantor tempat bertugas</small>
+                    </div>
+                    <div class="form-group" style="grid-column:span 2;">
+                        <label>Jam Kerja</label>
+                        <select class="form-control" name="scheduleId">
+                            <option value="">-- Pilih Jam Kerja --</option>
+                            @if (ViewBag.Schedules != null) {
+                                @foreach (var s in (Newtonsoft.Json.Linq.JArray)ViewBag.Schedules) {
+                                    var selected = (int?)s["id"] == currentScheduleId;
+                                    if (selected) {
+                                        <option value="@s["id"]" selected>@s["name"] (@s["clockIn"] - @s["clockOut"])</option>
+                                    } else {
+                                        <option value="@s["id"]">@s["name"] (@s["clockIn"] - @s["clockOut"])</option>
+                                    }
+                                }
+                            }
+                        </select>
+                        <small style="color:#9ca3af;font-size:11px;margin-top:4px;display:block;">Jadwal jam kerja (otomatis dari jabatan jika sudah diatur)</small>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="employee-form-actions">
+                <button type="submit" class="btn btn-primary" style="flex:1;padding:12px;"><i class="fas fa-save"></i> Perbarui Data</button>
+                <a asp-controller="Admin" asp-action="Users" class="btn btn-outline" style="padding:12px;"><i class="fas fa-arrow-left"></i> Batal</a>
+            </div>
+        </form>
+    </div>
+</div>

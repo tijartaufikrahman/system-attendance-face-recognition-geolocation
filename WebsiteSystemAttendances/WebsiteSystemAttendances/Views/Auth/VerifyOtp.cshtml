@@ -1,0 +1,119 @@
+@{
+    Layout = null;
+    ViewData["Title"] = "Verifikasi OTP";
+}
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verifikasi OTP - Attendance System</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .login-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            width: 100%;
+            max-width: 420px;
+        }
+        .login-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+        .login-header i { font-size: 50px; margin-bottom: 15px; }
+        .login-header h2 { margin: 0; font-weight: 700; }
+        .login-header p { margin: 5px 0 0; opacity: 0.8; }
+        .login-body { padding: 30px; }
+        .form-floating { margin-bottom: 15px; }
+        .form-floating .form-control {
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
+            padding: 15px 15px;
+            height: 55px;
+        }
+        .form-floating .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        .form-floating label { padding: 15px 15px; }
+        .btn-login {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            color: white;
+            transition: all 0.3s;
+        }
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+        .back-link { text-align: center; margin-top: 15px; }
+        .back-link a { color: #667eea; text-decoration: none; font-size: 14px; }
+        .back-link a:hover { text-decoration: underline; }
+        .alert { border-radius: 12px; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="login-header">
+            <i class="fas fa-shield-alt"></i>
+            <h2>Verifikasi OTP</h2>
+            <p>Masukkan kode OTP yang dikirim ke email Anda</p>
+        </div>
+        <div class="login-body">
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-circle"></i> @ViewBag.Error
+                </div>
+            }
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i> @TempData["Success"]
+                </div>
+            }
+
+            <form method="post" asp-controller="Auth" asp-action="VerifyOtp">
+                <input type="hidden" name="email" value="@ViewBag.Email" />
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="otp" name="otp" placeholder="123456" required autofocus
+                           maxlength="6" pattern="[0-9]{6}" style="text-align:center; font-size:24px; letter-spacing:8px;" />
+                    <label for="otp"><i class="fas fa-key"></i> Kode OTP</label>
+                </div>
+                <button type="submit" class="btn btn-login">
+                    <i class="fas fa-check-circle"></i> Verifikasi
+                </button>
+            </form>
+
+            <div class="back-link">
+                <a asp-controller="Auth" asp-action="ForgotPassword">
+                    <i class="fas fa-arrow-left"></i> Kirim Ulang OTP
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+</body>
+</html>

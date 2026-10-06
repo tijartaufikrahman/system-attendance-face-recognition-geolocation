@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Programing\\PortoPolio\\Sistem Absensi Face Recognition bebasis Geolokasi\\RestAPIAttendaces\\RestAPIAttendaces\\wwwroot\\uploads\\faces\\.gitkeep",
+      "PackagePath": "staticwebassets\\uploads\\faces\\.gitkeep"
+    },
+    {
+      "Id": "C:\\Programing\\PortoPolio\\Sistem Absensi Face Recognition bebasis Geolokasi\\RestAPIAttendaces\\RestAPIAttendaces\\wwwroot\\uploads\\faces\\24\\20260829204302853_5c23da87c91a4fcdac4c93e223c20b2a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\faces\\24\\20260829204302853_5c23da87c91a4fcdac4c93e223c20b2a.jpg"
+    },
+    {
+      "Id": "C:\\Programing\\PortoPolio\\Sistem Absensi Face Recognition bebasis Geolokasi\\RestAPIAttendaces\\RestAPIAttendaces\\wwwroot\\uploads\\faces\\24\\20260829204302879_feb83fb2be5647bd8feef27242aefe7d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\faces\\24\\20260829204302879_feb83fb2be5647bd8feef27242aefe7d.jpg"
+    },
+    {
+      "Id": "C:\\Programing\\PortoPolio\\Sistem Absensi Face Recognition bebasis Geolokasi\\RestAPIAttendaces\\RestAPIAttendaces\\wwwroot\\uploads\\faces\\24\\20260829204302884_3ac95da16a9042a590d2ce1c9c05a6cb.jpg",
+      "PackagePath": "staticwebassets\\uploads\\faces\\24\\20260829204302884_3ac95da16a9042a590d2ce1c9c05a6cb.jpg"
+    },
+    {
+      "Id": "C:\\Programing\\PortoPolio\\Sistem Absensi Face Recognition bebasis Geolokasi\\RestAPIAttendaces\\RestAPIAttendaces\\wwwroot\\uploads\\faces\\26\\20260829142658655_8fd782a44c8a445f8cf8a21dad1b4c6a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\faces\\26\\20260829142658655_8fd782a44c8a445f8cf8a21dad1b4c6a.jpg"
+    },
+    {
+      "Id": "C:\\Programing\\PortoPolio\\Sistem Absensi Face Recognition bebasis Geolokasi\\RestAPIAttendaces\\RestAPIAttendaces\\wwwroot\\uploads\\faces\\26\\20260829142658658_59fe906e00054267b24611bec715ae43.jpg",
+      "PackagePath": "staticwebassets\\uploads\\faces\\26\\20260829142658658_59fe906e00054267b24611bec715ae43.jpg"
+    },
+    {
+      "Id": "C:\\Programing\\PortoPolio\\Sistem Absensi Face Recognition bebasis Geolokasi\\RestAPIAttendaces\\RestAPIAttendaces\\wwwroot\\uploads\\faces\\26\\20260829142658661_42768be097b647ab85aee412a5e917d8.jpg",
+      "PackagePath": "staticwebassets\\uploads\\faces\\26\\20260829142658661_42768be097b647ab85aee412a5e917d8.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.RestAPIAttendaces.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.RestAPIAttendaces.props",
+      "PackagePath": "build\\RestAPIAttendaces.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.RestAPIAttendaces.props",
+      "PackagePath": "buildMultiTargeting\\RestAPIAttendaces.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.RestAPIAttendaces.props",
+      "PackagePath": "buildTransitive\\RestAPIAttendaces.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

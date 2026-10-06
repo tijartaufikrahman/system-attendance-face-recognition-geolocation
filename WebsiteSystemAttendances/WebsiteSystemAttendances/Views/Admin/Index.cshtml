@@ -1,0 +1,105 @@
+@{ ViewData["Title"] = "Dashboard"; }
+
+@section Styles { <style>
+    .dash-stat { position:relative; overflow:hidden; }
+    .dash-stat::after { content:''; position:absolute; width:90px; height:90px; border-radius:50%; right:-28px; bottom:-35px; background:rgba(15,118,110,.06); }
+    .dash-stat .stat-label { text-transform:uppercase; letter-spacing:.07em; font-size:.68rem; font-weight:700; }
+    .dash-actions { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:.85rem; }
+    .dash-action { display:flex; align-items:center; gap:.75rem; padding:1rem; border:1px solid #e2e8f0; border-radius:11px; color:#334155; background:#fff; text-decoration:none; transition:all .2s; }
+    .dash-action:hover { border-color:#99f6e4; background:#f0fdfa; transform:translateY(-2px); color:#0f766e; }
+    .dash-action i { width:36px; height:36px; display:flex; align-items:center; justify-content:center; border-radius:9px; background:#ccfbf1; color:#0f766e; }
+    .dash-action strong { display:block; font-size:.8rem; }
+    .dash-action small { color:#94a3b8; font-size:.68rem; }
+
+    /* ── Location Warning Banner ── */
+    .loc-warning-banner {
+        display: flex; align-items: stretch; gap: 0;
+        border-radius: 14px; overflow: hidden;
+        border: 1px solid #fde68a; background: #fffbeb;
+        box-shadow: 0 6px 24px rgba(234,179,8,.10);
+        margin-bottom: 1.5rem;
+        animation: bannerSlideIn .45s cubic-bezier(.22,1,.36,1);
+    }
+    @@keyframes bannerSlideIn { from { opacity:0; transform:translateY(-12px); } to { opacity:1; transform:translateY(0); } }
+
+    .loc-warning-accent {
+        width: 6px; flex-shrink: 0;
+        background: linear-gradient(180deg, #f59e0b, #d97706);
+    }
+
+    .loc-warning-body {
+        flex: 1; display: flex; align-items: center; gap: 16px;
+        padding: 18px 22px;
+    }
+
+    .loc-warning-icon-wrap {
+        flex-shrink: 0; width: 52px; height: 52px;
+        display: flex; align-items: center; justify-content: center;
+        border-radius: 14px; background: #fef3c7;
+    }
+    .loc-warning-icon-wrap i { font-size: 1.35rem; color: #d97706; }
+
+    .loc-warning-text { flex: 1; }
+    .loc-warning-text h4 {
+        margin: 0 0 3px; font-size: .88rem; font-weight: 700; color: #92400e;
+    }
+    .loc-warning-text p {
+        margin: 0; font-size: .78rem; color: #a16207; line-height: 1.45;
+    }
+
+    .loc-warning-cta {
+        flex-shrink: 0; display: flex; align-items: center; gap: 7px;
+        padding: 9px 18px; border-radius: 9px; border: none;
+        background: #d97706; color: #fff; font-size: .78rem; font-weight: 600;
+        cursor: pointer; text-decoration: none; transition: background .2s;
+        white-space: nowrap;
+    }
+    .loc-warning-cta:hover { background: #b45309; color: #fff; }
+    .loc-warning-cta i { font-size: .72rem; }
+
+    @@media (max-width: 640px) {
+        .loc-warning-body { flex-direction: column; align-items: flex-start; padding: 16px 18px; }
+        .loc-warning-cta { width: 100%; justify-content: center; }
+    }
+</style> }
+
+@* ═══ Location Warning Banner ═══ *@
+@if ((ViewBag.TotalLocations ?? 0) == 0)
+{
+    <div class="loc-warning-banner" role="alert">
+        <div class="loc-warning-accent"></div>
+        <div class="loc-warning-body">
+            <div class="loc-warning-icon-wrap">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="loc-warning-text">
+                <h4><i class="fas fa-exclamation-triangle" style="margin-right:4px;font-size:.78rem;"></i> Lokasi Kantor Belum Dikonfigurasi</h4>
+                <p>Anda belum menetapkan lokasi kantor. Tanpa lokasi, karyawan tidak bisa melakukan presensi geofencing. Segera atur lokasi kantor pada peta.</p>
+            </div>
+            <a asp-controller="Admin" asp-action="Locations" class="loc-warning-cta">
+                <i class="fas fa-plus-circle"></i> Atur Sekarang
+            </a>
+        </div>
+    </div>
+}
+
+<div class="stat-grid mt-3">
+    <div class="stat-card dash-stat"><div class="stat-icon green"><i class="fas fa-users"></i></div><div><div class="stat-number">@(ViewBag.TotalUsers ?? 0)</div><div class="stat-label">Karyawan</div></div></div>
+    <div class="stat-card dash-stat"><div class="stat-icon blue"><i class="fas fa-clock"></i></div><div><div class="stat-number">@(ViewBag.TotalSchedules ?? 0)</div><div class="stat-label">Jam Kerja</div></div></div>
+    <div class="stat-card dash-stat"><div class="stat-icon purple"><i class="fas fa-briefcase"></i></div><div><div class="stat-number">@(ViewBag.TotalPositions ?? 0)</div><div class="stat-label">Jabatan</div></div></div>
+    <div class="stat-card dash-stat"><div class="stat-icon orange"><i class="fas fa-map-marker-alt"></i></div><div><div class="stat-number">@(ViewBag.TotalLocations ?? 0)</div><div class="stat-label">Lokasi</div></div></div>
+</div>
+
+<div class="card">
+    <div class="card-header"><h3><i class="fas fa-bolt" style="color:#0f766e;margin-right:.45rem;"></i>Akses Cepat</h3><span style="font-size:.72rem;color:#94a3b8;">Menu utama</span></div>
+    <div class="card-body">
+        <div class="dash-actions">
+            <a asp-controller="Admin" asp-action="Users" class="dash-action"><i class="fas fa-users"></i><span><strong>Data Karyawan</strong><small>Kelola pegawai</small></span></a>
+            <a asp-controller="Admin" asp-action="Schedules" class="dash-action"><i class="fas fa-clock"></i><span><strong>Jam Kerja</strong><small>Atur jadwal</small></span></a>
+            <a asp-controller="Admin" asp-action="Positions" class="dash-action"><i class="fas fa-briefcase"></i><span><strong>Jabatan</strong><small>Kelola posisi</small></span></a>
+            <a asp-controller="Admin" asp-action="Locations" class="dash-action"><i class="fas fa-map-marker-alt"></i><span><strong>Lokasi Kantor</strong><small>Atur geofencing</small></span></a>
+            <a asp-controller="Admin" asp-action="Announcements" class="dash-action"><i class="fas fa-bullhorn"></i><span><strong>Pengumuman</strong><small>Kirim informasi</small></span></a>
+            <a asp-controller="Admin" asp-action="Attendances" class="dash-action"><i class="fas fa-clipboard-check"></i><span><strong>Presensi</strong><small>Lihat rekap</small></span></a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,285 @@
+@model Newtonsoft.Json.Linq.JArray
+@{ ViewData["Title"] = "Penugasan Lembur";
+   var users = ViewBag.Users as Newtonsoft.Json.Linq.JArray ?? new Newtonsoft.Json.Linq.JArray();
+   var schedules = ViewBag.Schedules as Newtonsoft.Json.Linq.JArray ?? new Newtonsoft.Json.Linq.JArray();
+   var nowWib = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.UtcNow, "SE Asia Standard Time");
+   var todayStr = nowWib.ToString("yyyy-MM-dd"); }
+
+@section Styles { <style>
+    .ot-wrap { display:flex; gap:1.25rem; }
+    .ot-main { flex:1; min-width:0; }
+    .ot-side { width:320px; flex-shrink:0; }
+
+    .ot-card { background:#fff; border:1px solid #e5e7eb; border-radius:8px; padding:1.25rem; margin-bottom:1rem; }
+    .ot-card h3 { font-size:0.85rem; font-weight:600; color:#111827; margin:0 0 0.75rem 0; display:flex; align-items:center; gap:0.5rem; }
+    .ot-card h3 i { color:#6b7280; font-size:0.8rem; }
+
+    .ot-label { display:block; font-size:0.72rem; font-weight:500; color:#374151; margin-bottom:0.3rem; }
+    .ot-input { width:100%; padding:0.45rem 0.65rem; border:1px solid #d1d5db; border-radius:6px; font-size:0.8rem; color:#111827; background:#fff; outline:none; }
+    .ot-input:focus { border-color:#111827; }
+    .ot-textarea { width:100%; padding:0.45rem 0.65rem; border:1px solid #d1d5db; border-radius:6px; font-size:0.8rem; color:#111827; background:#fff; outline:none; resize:vertical; min-height:50px; }
+    .ot-textarea:focus { border-color:#111827; }
+    .ot-hint { font-size:0.65rem; color:#9ca3af; margin-top:0.15rem; }
+    .ot-form-row { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem; }
+    .ot-form-full { margin-bottom:0.75rem; }
+
+    .ot-btn { padding:0.4rem 0.85rem; border-radius:6px; font-size:0.78rem; font-weight:500; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:0.3rem; }
+    .ot-btn-primary { background:#111827; color:#fff; }
+    .ot-btn-primary:hover { background:#1f2937; }
+    .ot-btn-outline { background:#fff; color:#374151; border:1px solid #d1d5db; }
+    .ot-btn-outline:hover { background:#f9fafb; }
+    .ot-btn-danger { background:#fff; color:#dc2626; border:1px solid #fecaca; font-size:0.72rem; padding:0.3rem 0.6rem; }
+    .ot-btn-danger:hover { background:#fef2f2; }
+
+    .ot-emp-search { width:100%; padding:0.4rem 0.65rem; border:1px solid #d1d5db; border-radius:6px; font-size:0.78rem; outline:none; margin-bottom:0.5rem; }
+    .ot-emp-search:focus { border-color:#111827; }
+    .ot-emp-list { max-height:280px; overflow-y:auto; border:1px solid #e5e7eb; border-radius:6px; }
+    .ot-emp-item { display:flex; align-items:center; gap:0.5rem; padding:0.45rem 0.75rem; border-bottom:1px solid #f3f4f6; font-size:0.78rem; color:#374151; cursor:pointer; }
+    .ot-emp-item:last-child { border-bottom:none; }
+    .ot-emp-item:hover { background:#f9fafb; }
+    .ot-emp-item input[type="checkbox"] { accent-color:#111827; cursor:pointer; }
+    .ot-emp-item label { cursor:pointer; margin:0; font-weight:400; flex:1; }
+    .ot-emp-item .ot-emp-email { font-size:0.68rem; color:#9ca3af; }
+    .ot-selectall { padding:0.45rem 0.75rem; border-bottom:1px solid #e5e7eb; background:#f9fafb; display:flex; align-items:center; gap:0.5rem; font-size:0.75rem; font-weight:500; color:#374151; cursor:pointer; }
+    .ot-selectall:hover { background:#f3f4f6; }
+    .ot-emp-count { font-size:0.7rem; color:#9ca3af; margin-bottom:0.4rem; }
+
+    .ot-table-card { background:#fff; border:1px solid #e8eef5; border-radius:14px; box-shadow:0 6px 20px rgba(15,23,42,.04); overflow-x:auto; }
+    .ot-table { width:100%; min-width:720px; border-collapse:separate; border-spacing:0; }
+    .ot-table th { padding:13px 16px; text-align:left; font-size:0.67rem; font-weight:600; color:#64748b; text-transform:uppercase; letter-spacing:.055em; background:#f8fafc; border-bottom:1px solid #e2e8f0; }
+    .ot-table td { padding:13px 16px; font-size:0.8rem; color:#334155; border-top:1px solid #eef2f7; }
+    .ot-table tr:last-child td { border-bottom:none; }
+    .ot-table tr:hover td { background:#f8fafc; }
+
+    .ot-badge { display:inline-block; padding:0.12rem 0.45rem; border-radius:10px; font-size:0.68rem; font-weight:500; }
+    .ot-badge-pending { background:#fef3c7; color:#92400e; }
+    .ot-badge-approved { background:#d1fae5; color:#065f46; }
+    .ot-badge-rejected { background:#fee2e2; color:#991b1b; }
+    .ot-actions { display:flex; gap:0.3rem; flex-wrap:wrap; }
+
+    .ot-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }
+    .ot-header h2 { font-size:1rem; font-weight:600; color:#111827; margin:0; }
+    .ot-header p { color:#6b7280; font-size:0.75rem; margin:0.2rem 0 0 0; }
+
+    .ot-empty { text-align:center; padding:2rem 1rem; color:#9ca3af; }
+    .ot-empty i { font-size:1.5rem; margin-bottom:0.5rem; display:block; }
+    .ot-empty p { font-size:0.82rem; margin:0; }
+
+    .ot-info-line { font-size:0.75rem; color:#6b7280; line-height:1.7; }
+    .ot-info-line strong { color:#374151; }
+    .ot-info-line ol { margin:0.25rem 0 0 1.2rem; padding:0; }
+    .ot-info-line ul { margin:0.25rem 0 0 1.2rem; padding:0; }
+</style> }
+
+<div class="ot-header">
+    <div>
+        <h2>Penugasan Lembur</h2>
+        <p>Penugasan admin dan pengajuan lembur karyawan</p>
+    </div>
+    <button class="ot-btn ot-btn-primary" onclick="showForm()"><i class="fas fa-plus"></i> Tambah Lembur</button>
+</div>
+
+<!-- FORM (hidden default) -->
+<div id="createForm" style="display:none;">
+    <div class="ot-wrap">
+        <div class="ot-main">
+            <div class="ot-card" style="margin-bottom:0;">
+                <h3><i class="fas fa-business-time"></i> Form Penugasan Lembur</h3>
+                <form method="post" asp-controller="Admin" asp-action="OvertimeCreate" data-ajax-form data-ajax-redirect="@Url.Action("Overtimes", "Admin")">
+                    <input type="hidden" name="userIds" id="selectedUserIds" value="" />
+                    <div class="ot-form-full">
+                        <label class="ot-label">Tanggal Lembur *</label>
+                        <input type="date" class="ot-input" name="date" value="@todayStr" required />
+                    </div>
+                    <div class="ot-form-full">
+                        <div>
+                            <label class="ot-label">Jadwal *</label>
+                            <select class="ot-input" name="scheduleId" required>
+                                <option value="">Pilih jadwal</option>
+                                @foreach (var schedule in schedules)
+                                {
+                                    <option value="@schedule["id"]">@schedule["name"] (@schedule["clockIn"] - @schedule["clockOut"])</option>
+                                }
+                            </select>
+                            <p class="ot-hint">Jam lembur mengikuti jadwal yang dipilih</p>
+                        </div>
+                    </div>
+                    <div class="ot-form-full">
+                        <label class="ot-label">Pesan / Catatan <span style="color:#9ca3af;">(opsional)</span></label>
+                        <textarea class="ot-textarea" name="note" placeholder="Contoh: Lembur mendadak, project deadline..." rows="2"></textarea>
+                        <p class="ot-hint">Jika diisi, akan otomatis dikirim sebagai pengumuman</p>
+                    </div>
+                    <div style="display:flex;gap:0.5rem;margin-top:0.25rem;">
+                        <button type="submit" class="ot-btn ot-btn-primary"><i class="fas fa-save"></i> Simpan</button>
+                        <button type="button" class="ot-btn ot-btn-outline" onclick="hideForm()">Batal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="ot-side">
+            <div class="ot-card" style="margin-bottom:0;">
+                <h3><i class="fas fa-users"></i> Pilih Karyawan *</h3>
+                <label class="ot-emp-count" id="empCount">0 dipilih</label>
+                <input type="text" class="ot-emp-search" id="empSearch" placeholder="Cari nama karyawan..." onkeyup="filterEmp()" />
+                <div class="ot-emp-list" id="empList">
+                    <div class="ot-selectall">
+                        <input type="checkbox" id="selectAll" onchange="toggleAll(this)" />
+                        <label for="selectAll" style="cursor:pointer;">Pilih Semua</label>
+                    </div>
+                    @foreach (var u in users)
+                    {
+                        var platform = "";
+                        try { platform = u["role"]?["platform"]?.ToString() ?? ""; } catch { platform = ""; }
+                        if (platform.Equals("mobile", StringComparison.OrdinalIgnoreCase))
+                        {
+                            <div class="ot-emp-item" data-name="@u["name"]?.ToString().ToLower() @u["email"]?.ToString().ToLower()">
+                                <input type="checkbox" class="emp-cb" value="@u["id"]" onchange="updateCount()" />
+                                <label>
+                                    <div>@u["name"]</div>
+                                    <div class="ot-emp-email">@u["email"]</div>
+                                </label>
+                            </div>
+                        }
+                    }
+                </div>
+                <p class="ot-hint" style="margin-top:0.4rem;">Hanya karyawan dengan akses mobile</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TABEL + INFO (hidden saat form buka) -->
+<div id="tableSection">
+    <div class="ot-wrap">
+        <div class="ot-main">
+            <div class="admin-table-card ot-table-card p-3">
+                <table class="ot-table admin-datatable">
+                    <thead>
+                        <tr><th>#</th><th>Karyawan</th><th>Tanggal</th><th>Jam Kerja</th><th>Catatan</th><th>Status</th><th>Aksi</th></tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            int i = 1;
+                            @foreach (var o in Model)
+                            {
+                                var status = (o["status"]?.ToString() ?? "PENDING_EMPLOYEE").ToUpperInvariant();
+                                var userName = o["user"]?["name"]?.ToString() ?? $"User #{o["userId"]}";
+                                            var requestType = (o["requestType"]?.ToString() ?? "").ToUpperInvariant();
+                                            var isAssignmentPending = status == "PENDING_EMPLOYEE";
+                                            var isEmployeeRequest = requestType == "EMPLOYEE_REQUEST";
+                                            var isSupervisorPending = status == "PENDING_SUPERVISOR" && isEmployeeRequest;
+                                            var originLabel = isEmployeeRequest ? "Pengajuan karyawan" : "Penugasan admin";
+                                            var dateStr = o["date"]?.ToString() ?? "";
+                                            var dateVal = !string.IsNullOrEmpty(dateStr) ? Convert.ToDateTime(dateStr).ToString("dd/MM/yyyy") : "-";
+                                            var scheduleName = o["scheduleName"]?.ToString() ?? o["schedule"]?["name"]?.ToString() ?? "-";
+                                            var startTime = o["startTime"]?.ToString() ?? o["schedule"]?["clockIn"]?.ToString() ?? "-";
+                                            var endTime = o["endTime"]?.ToString() ?? o["schedule"]?["clockOut"]?.ToString() ?? "-";
+                                            <tr>
+                                                <td>@i</td>
+                                                <td><strong>@userName</strong><br /><span style="font-size:0.68rem;color:#9ca3af;">@originLabel</span></td>
+                                                <td>@dateVal</td>
+                                                <td><strong>@scheduleName</strong><br /><span style="font-size:0.7rem;color:#9ca3af;">@startTime — @endTime</span></td>
+                                    <td style="max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#6b7280;">@(o["note"]?.ToString() ?? "-")</td>
+                                    <td>
+                                        @if (status == "PENDING_EMPLOYEE") { <span class="ot-badge ot-badge-pending">Menunggu Karyawan</span> }
+                                        else if (status == "PENDING_SUPERVISOR") { <span class="ot-badge ot-badge-pending">Menunggu Supervisor</span> }
+                                        else if (status == "APPROVED") { <span class="ot-badge ot-badge-approved">Disetujui</span> }
+                                        else { <span class="ot-badge ot-badge-rejected">Ditolak</span> }
+                                    </td>
+                                    <td>
+                                        @if (isSupervisorPending) {
+                                            <div class="ot-actions">
+                                                <form asp-controller="Admin" asp-action="OvertimeReview" asp-route-id="@o["id"]" method="post" data-ajax-form data-ajax-redirect="@Url.Action("Overtimes", "Admin")">
+                                                    <input type="hidden" name="approved" value="true" />
+                                                    <button type="submit" class="ot-btn ot-btn-primary">Setujui</button>
+                                                </form>
+                                                <form asp-controller="Admin" asp-action="OvertimeReview" asp-route-id="@o["id"]" method="post" data-ajax-form data-ajax-redirect="@Url.Action("Overtimes", "Admin")">
+                                                    <input type="hidden" name="approved" value="false" />
+                                                    <button type="submit" class="ot-btn ot-btn-danger">Tolak</button>
+                                                </form>
+                                            </div>
+                                        } else if (isAssignmentPending) {
+                                            <form asp-controller="Admin" asp-action="OvertimeDelete" asp-route-id="@o["id"]" method="post" class="d-inline" data-ajax-delete data-confirm="Hapus penugasan lembur ini?">
+                                                <button type="submit" class="ot-btn ot-btn-danger"><i class="fas fa-trash"></i></button>
+                                            </form>
+                                        } else { <span style="font-size:0.68rem;color:#9ca3af;">—</span> }
+                                    </td>
+                                </tr>
+                                i++;
+                            }
+                        }
+                        else
+                        {
+                            <tr><td colspan="7">
+                                <div class="ot-empty">
+                                    <i class="fas fa-business-time"></i>
+                                    <p>Belum ada penugasan lembur</p>
+                                    <button class="ot-btn ot-btn-primary" onclick="showForm()" style="margin-top:0.5rem;"><i class="fas fa-plus"></i> Tambah Sekarang</button>
+                                </div>
+                            </td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="ot-side">
+            <div class="ot-card" style="margin-bottom:0;">
+                <h3><i class="fas fa-info-circle"></i> Informasi Lembur</h3>
+                <div class="ot-info-line">
+                    <p style="margin:0 0 0.4rem 0;"><strong>Status:</strong></p>
+                    <p style="margin:0 0 0.2rem 0;"><span class="ot-badge ot-badge-pending">Menunggu Karyawan</span> Penugasan admin menunggu persetujuan</p>
+                    <p style="margin:0 0 0.2rem 0;"><span class="ot-badge ot-badge-pending">Menunggu Supervisor</span> Pengajuan karyawan menunggu review</p>
+                    <p style="margin:0 0 0.2rem 0;"><span class="ot-badge ot-badge-approved">Disetujui</span> Lembur dapat digunakan untuk absensi</p>
+                    <p style="margin:0 0 0.6rem 0;"><span class="ot-badge ot-badge-rejected">Ditolak</span> Pengajuan tidak disetujui</p>
+                    <p style="margin:0 0 0.3rem 0;"><strong>Cara kerja:</strong></p>
+                    <ol>
+                        <li>Admin/supervisor dapat menugaskan lembur</li>
+                        <li>Karyawan menerima notifikasi di <strong>mobile app</strong></li>
+                        <li>Karyawan dapat <strong>mengajukan</strong> lembur sendiri</li>
+                        <li>Pihak yang berwenang menyetujui atau menolak</li>
+                    </ol>
+                    <p style="margin:0.6rem 0 0 0;"><strong>Catatan:</strong></p>
+                    <ul>
+                        <li>Hanya status <strong>Menunggu</strong> bisa dihapus</li>
+                        <li>Jam mengikuti jadwal yang dipilih</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts { <script>
+    function showForm() {
+        document.getElementById('createForm').style.display = 'block';
+        document.getElementById('tableSection').style.display = 'none';
+    }
+    function hideForm() {
+        document.getElementById('createForm').style.display = 'none';
+        document.getElementById('tableSection').style.display = '';
+    }
+    function toggleAll(src) {
+        document.querySelectorAll('.emp-cb').forEach(cb => cb.checked = src.checked);
+        updateCount();
+    }
+    function updateCount() {
+        var count = document.querySelectorAll('.emp-cb:checked').length;
+        document.getElementById('empCount').textContent = count + ' dipilih';
+        document.getElementById('selectedUserIds').value =
+            Array.from(document.querySelectorAll('.emp-cb:checked')).map(cb => cb.value).join(',');
+    }
+    function filterEmp() {
+        var q = document.getElementById('empSearch').value.toLowerCase();
+        document.querySelectorAll('.ot-emp-item').forEach(item => {
+            item.style.display = (item.getAttribute('data-name') || '').includes(q) ? '' : 'none';
+        });
+    }
+    document.querySelector('#createForm form').addEventListener('submit', function(e) {
+        updateCount();
+        if (!document.getElementById('selectedUserIds').value) {
+            e.preventDefault();
+            alert('Pilih minimal 1 karyawan!');
+        }
+    });
+</script> }

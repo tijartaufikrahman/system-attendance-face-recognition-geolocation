@@ -1,0 +1,73 @@
+@model Newtonsoft.Json.Linq.JArray
+@{
+    ViewData["Title"] = "Perusahaan / Klien";
+}
+
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+    <div>
+        <p style="color:#6b7280; font-size:0.85rem;">Total: @(Model?.Count ?? 0) perusahaan terdaftar</p>
+    </div>
+    <a asp-controller="SuperAdmin" asp-action="CompanyCreate" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Daftarkan Klien
+    </a>
+</div>
+
+<div class="card">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nama Perusahaan</th>
+                <th>Telepon</th>
+                <th>Alamat</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                int i = 1;
+                @foreach (var c in Model)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td><strong>@c["name"]</strong></td>
+                        <td>@(c["phone"] ?? "-")</td>
+                        <td style="max-width:200px; overflow:hidden; text-overflow:ellipsis;">@(c["address"] ?? "-")</td>
+                        <td>
+                            @if (c["isActive"]?.ToObject<bool>() == true)
+                            {
+                                <span class="badge badge-active">Aktif</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-inactive">Suspended</span>
+                            }
+                        </td>
+                        <td>
+                            <a asp-controller="SuperAdmin" asp-action="CompanyEdit" asp-route-id="@c["id"]" class="btn btn-outline btn-sm">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <form asp-controller="SuperAdmin" asp-action="CompanyDelete" asp-route-id="@c["id"]" method="post" class="d-inline" onsubmit="return confirm('Yakin hapus perusahaan ini? Semua data akan hilang!')">
+                                <button type="submit" class="btn btn-danger-outline btn-sm">
+                                    <i class="fas fa-trash"></i> Hapus
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    i++;
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6" style="text-align:center; padding:3rem; color:#9ca3af;">
+                        <i class="fas fa-building" style="font-size:3rem; margin-bottom:1rem; display:block;"></i>
+                        Belum ada perusahaan terdaftar
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

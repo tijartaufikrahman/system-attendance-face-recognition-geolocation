@@ -1,0 +1,297 @@
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\WebsiteSystemAttendances.exe
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\WebsiteSystemAttendances.dll
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\WebsiteSystemAttendances.pdb
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.csproj.AssemblyReference.cache
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.AssemblyInfoInputs.cache
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.AssemblyInfo.cs
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.RazorAssemblyInfo.cache
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.RazorAssemblyInfo.cs
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\staticwebassets\msbuild.WebsiteSystemAttendances.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\staticwebassets\msbuild.build.WebsiteSystemAttendances.props
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebsiteSystemAttendances.props
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebsiteSystemAttendances.props
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\scopedcss\bundle\WebsiteSystemAttendances.styles.css
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\scopedcss\projectbundle\WebsiteSystemAttendances.bundle.scp.css
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteS.1275DD1D.Up2Date
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.dll
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\refint\WebsiteSystemAttendances.dll
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.pdb
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.genruntimeconfig.cache
+C:\Users\DELL\Documents\Skripsi#8\Program\Free\FULLFREE\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\ref\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web\WebsiteSystemAttendances.pdb
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-filter-2\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-filter-2\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-filter-2\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-filter-2\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-filter-2\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-filter-2\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-filter-2\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-filter-2\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-filter-2\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-filter-2\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-filter-2\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-filter-2\WebsiteSystemAttendances.pdb
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-ui\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-ui\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-ui\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-ui\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-ui\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-ui\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-ui\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-ui\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-ui\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-ui\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-ui\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-ui\WebsiteSystemAttendances.pdb
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-login\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-login\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-login\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-login\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-login\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-login\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-login\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-login\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-login\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-login\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-login\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-login\WebsiteSystemAttendances.pdb
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-theme\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-theme\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-theme\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-theme\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-theme\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-theme\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-theme\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-theme\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-theme\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-theme\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-theme\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-theme\WebsiteSystemAttendances.pdb
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-datatable\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-datatable\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-datatable\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-datatable\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-datatable\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-datatable\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-datatable\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-datatable\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-datatable\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-datatable\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-datatable\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-datatable\WebsiteSystemAttendances.pdb
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-header\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-header\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-header\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-header\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-header\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-header\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-header\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-header\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-header\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-header\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-header\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-header\WebsiteSystemAttendances.pdb
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-refresh\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-refresh\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-refresh\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-refresh\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-refresh\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-refresh\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-refresh\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-refresh\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-refresh\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-refresh\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-refresh\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-admin-refresh\WebsiteSystemAttendances.pdb
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-account-ui\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-account-ui\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-account-ui\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-account-ui\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-account-ui\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-account-ui\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-account-ui\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-account-ui\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-account-ui\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-account-ui\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-account-ui\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-account-ui\WebsiteSystemAttendances.pdb
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-no-breadcrumb\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-no-breadcrumb\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-no-breadcrumb\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-no-breadcrumb\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-no-breadcrumb\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-no-breadcrumb\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-no-breadcrumb\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-no-breadcrumb\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-no-breadcrumb\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-no-breadcrumb\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-no-breadcrumb\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-no-breadcrumb\WebsiteSystemAttendances.pdb
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-dashboard-location\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-dashboard-location\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-dashboard-location\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-dashboard-location\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-dashboard-location\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-dashboard-location\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-dashboard-location\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-dashboard-location\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-dashboard-location\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-dashboard-location\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-dashboard-location\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-dashboard-location\WebsiteSystemAttendances.pdb
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-topbar-title\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-topbar-title\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-topbar-title\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-topbar-title\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-topbar-title\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-topbar-title\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-topbar-title\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-topbar-title\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-topbar-title\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-topbar-title\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-topbar-title\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-topbar-title\WebsiteSystemAttendances.pdb
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-typography\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-typography\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-typography\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-typography\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-typography\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-typography\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-typography\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-typography\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-typography\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-typography\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-typography\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-typography\WebsiteSystemAttendances.pdb
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-breadcrumb\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-breadcrumb\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-breadcrumb\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-breadcrumb\bin\Debug\net8.0\appsettings.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-breadcrumb\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-breadcrumb\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-breadcrumb\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-breadcrumb\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-breadcrumb\WebsiteSystemAttendances.deps.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-breadcrumb\WebsiteSystemAttendances.runtimeconfig.json
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-breadcrumb\WebsiteSystemAttendances.dll
+C:\Users\DELL\.copilot\session-state\be4446ab-5ca2-42dd-8635-91401e5c46bc\files\build-web-breadcrumb\WebsiteSystemAttendances.pdb
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.csproj.AssemblyReference.cache
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.AssemblyInfoInputs.cache
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.AssemblyInfo.cs
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.csproj.CoreCompileInputs.cache
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.MvcApplicationPartsAssemblyInfo.cache
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.RazorAssemblyInfo.cache
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.RazorAssemblyInfo.cs
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\appsettings.Development.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\appsettings.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\WebsiteSystemAttendances.exe
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\WebsiteSystemAttendances.deps.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\WebsiteSystemAttendances.runtimeconfig.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\WebsiteSystemAttendances.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\WebsiteSystemAttendances.pdb
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\staticwebassets.build.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\staticwebassets.development.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\staticwebassets\msbuild.WebsiteSystemAttendances.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\staticwebassets\msbuild.build.WebsiteSystemAttendances.props
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebsiteSystemAttendances.props
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebsiteSystemAttendances.props
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\scopedcss\bundle\WebsiteSystemAttendances.styles.css
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\scopedcss\projectbundle\WebsiteSystemAttendances.bundle.scp.css
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteS.1275DD1D.Up2Date
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\refint\WebsiteSystemAttendances.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.pdb
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\WebsiteSystemAttendances.genruntimeconfig.cache
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\Debug\net8.0\ref\WebsiteSystemAttendances.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsCheck2\appsettings.Development.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsCheck2\appsettings.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsCheck2\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsCheck2\WebsiteSystemAttendances.exe
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsCheck2\WebsiteSystemAttendances.deps.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsCheck2\WebsiteSystemAttendances.runtimeconfig.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsCheck2\WebsiteSystemAttendances.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsCheck2\WebsiteSystemAttendances.pdb
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsCheck2\Newtonsoft.Json.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsFixCheck\appsettings.Development.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsFixCheck\appsettings.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsFixCheck\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsFixCheck\WebsiteSystemAttendances.exe
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsFixCheck\WebsiteSystemAttendances.deps.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsFixCheck\WebsiteSystemAttendances.runtimeconfig.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsFixCheck\WebsiteSystemAttendances.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsFixCheck\WebsiteSystemAttendances.pdb
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\SettingsFixCheck\Newtonsoft.Json.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceAdminCheck\appsettings.Development.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceAdminCheck\appsettings.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceAdminCheck\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceAdminCheck\WebsiteSystemAttendances.exe
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceAdminCheck\WebsiteSystemAttendances.deps.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceAdminCheck\WebsiteSystemAttendances.runtimeconfig.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceAdminCheck\WebsiteSystemAttendances.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceAdminCheck\WebsiteSystemAttendances.pdb
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceAdminCheck\Newtonsoft.Json.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceNullCheck\appsettings.Development.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceNullCheck\appsettings.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceNullCheck\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceNullCheck\WebsiteSystemAttendances.exe
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceNullCheck\WebsiteSystemAttendances.deps.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceNullCheck\WebsiteSystemAttendances.runtimeconfig.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceNullCheck\WebsiteSystemAttendances.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceNullCheck\WebsiteSystemAttendances.pdb
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\AttendanceNullCheck\Newtonsoft.Json.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\build-refactor\appsettings.Development.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\build-refactor\appsettings.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\build-refactor\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\build-refactor\WebsiteSystemAttendances.exe
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\build-refactor\WebsiteSystemAttendances.deps.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\build-refactor\WebsiteSystemAttendances.runtimeconfig.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\build-refactor\WebsiteSystemAttendances.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\build-refactor\WebsiteSystemAttendances.pdb
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\build-refactor\Newtonsoft.Json.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeValidation\appsettings.Development.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeValidation\appsettings.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeValidation\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeValidation\WebsiteSystemAttendances.exe
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeValidation\WebsiteSystemAttendances.deps.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeValidation\WebsiteSystemAttendances.runtimeconfig.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeValidation\WebsiteSystemAttendances.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeValidation\WebsiteSystemAttendances.pdb
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeValidation\Newtonsoft.Json.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeFinalValidation\appsettings.Development.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeFinalValidation\appsettings.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeFinalValidation\WebsiteSystemAttendances.staticwebassets.runtime.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeFinalValidation\WebsiteSystemAttendances.exe
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeFinalValidation\WebsiteSystemAttendances.deps.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeFinalValidation\WebsiteSystemAttendances.runtimeconfig.json
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeFinalValidation\WebsiteSystemAttendances.dll
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeFinalValidation\WebsiteSystemAttendances.pdb
+C:\Programing\PortoPolio\Sistem Absensi Face Recognition bebasis Geolokasi\WebsiteSystemAttendances\WebsiteSystemAttendances\obj\OvertimeFinalValidation\Newtonsoft.Json.dll

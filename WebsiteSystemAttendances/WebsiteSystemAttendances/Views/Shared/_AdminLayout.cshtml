@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin HR</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-brand">
+            <h3><i class="fas fa-building"></i> ADMIN HR</h3>
+            <p>@(ViewBag.CompanyName ?? "Perusahaan")</p>
+        </div>
+        <div class="sidebar-nav">
+            <div class="nav-section">MENU</div>
+            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")" asp-controller="Admin" asp-action="Index"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <div class="nav-section">MASTER DATA</div>
+            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Locations" ? "active" : "")" asp-controller="Admin" asp-action="Locations"><i class="fas fa-map-marker-alt"></i> Lokasi</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString()?.StartsWith("Schedule") == true ? "active" : "")" asp-controller="Admin" asp-action="Schedules"><i class="fas fa-clock"></i> Jam Kerja</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString()?.StartsWith("Position") == true ? "active" : "")" asp-controller="Admin" asp-action="Positions"><i class="fas fa-briefcase"></i> Jabatan</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString()?.StartsWith("Role") == true ? "active" : "")" asp-controller="Admin" asp-action="Roles"><i class="fas fa-user-tag"></i> Role (Hak Akses)</a>
+            <div class="nav-section">KARYAWAN</div>
+            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString()?.StartsWith("User") == true ? "active" : "")" asp-controller="Admin" asp-action="Users"><i class="fas fa-users"></i> Data Karyawan</a>
+            <div class="nav-section">OPERASIONAL</div>
+            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "AttendanceSettings" ? "active" : "")" asp-controller="Admin" asp-action="AttendanceSettings"><i class="fas fa-sliders-h"></i> Pengaturan Absensi</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Attendances" ? "active" : "")" asp-controller="Admin" asp-action="Attendances"><i class="fas fa-clipboard-check"></i> Presensi</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString()?.StartsWith("Overtime") == true ? "active" : "")" asp-controller="Admin" asp-action="Overtimes"><i class="fas fa-business-time"></i> Lembur</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString()?.StartsWith("Announcement") == true ? "active" : "")" asp-controller="Admin" asp-action="Announcements"><i class="fas fa-bullhorn"></i> Pengumuman</a>
+        </div>
+        <div class="sidebar-footer">
+            <form asp-controller="Auth" asp-action="Logout" method="post">
+                <button type="submit" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        @{
+            var currentAction = ViewContext.RouteData.Values["action"]?.ToString() ?? "Index";
+            var currentTitle = ViewData["Title"]?.ToString() ?? currentAction;
+            var parentTitle = currentAction.StartsWith("User") ? "Data Karyawan"
+                : currentAction.StartsWith("Schedule") ? "Jam Kerja"
+                : currentAction.StartsWith("Position") ? "Jabatan"
+                : currentAction.StartsWith("Role") ? "Role"
+                : currentAction.StartsWith("Overtime") ? "Lembur"
+                : currentAction.StartsWith("Announcement") ? "Pengumuman"
+                : currentAction.StartsWith("Location") ? "Lokasi Kantor"
+                : currentAction == "Attendances" ? "Presensi"
+                : "Dashboard";
+            var isChildPage = currentAction.EndsWith("Create", StringComparison.OrdinalIgnoreCase)
+                || currentAction.EndsWith("Edit", StringComparison.OrdinalIgnoreCase);
+        }
+        <header class="topbar" aria-label="Navigasi halaman Admin HR">
+            <div class="topbar-main">
+                <div class="topbar-left">
+                    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Buka atau tutup menu"><i class="fas fa-bars"></i></button>
+                    <span class="topbar-title">@ViewData["Title"]</span>
+                </div>
+                <div class="topbar-account">
+                    <div class="account-chip" title="Akun Admin HR">
+                        <div class="user-avatar">@(ViewBag.UserName?.ToString()?.Substring(0, 1) ?? "A")</div>
+                        <div class="account-copy">
+                            <div class="user-name">@(ViewBag.UserName ?? "Admin")</div>
+                            <div class="user-role">Admin HR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @if (!string.Equals(currentAction, "Index", StringComparison.OrdinalIgnoreCase))
+            {
+                <div class="topbar-breadcrumb-wrap">
+                    <nav class="topbar-breadcrumb" aria-label="Breadcrumb">
+                        <span class="crumb-parent">@parentTitle</span><span>/</span>
+                        @if (isChildPage) { <span class="crumb-current">@currentTitle</span> }
+                    </nav>
+                </div>
+            }
+        </header>
+        @if (TempData["Success"] != null) { <div class="alert alert-success"><i class="fas fa-check-circle"></i> @TempData["Success"]</div> }
+        @if (TempData["Error"] != null) { <div class="alert alert-danger"><i class="fas fa-exclamation-circle"></i> @TempData["Error"]</div> }
+        @if (ViewBag.Error != null) { <div class="alert alert-danger"><i class="fas fa-exclamation-circle"></i> @ViewBag.Error</div> }
+        <div id="ajaxFeedback" class="alert" role="status" aria-live="polite" hidden></div>
+        @RenderBody()
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script>
+        (function ($) {
+            'use strict';
+            var $sidebar = $('.sidebar'), $main = $('.main-content'), $overlay = $('#sidebarOverlay');
+            $('#menuToggle').on('click', function () {
+                var mobile = window.innerWidth <= 768;
+                $sidebar.toggleClass('closed');
+                if (!mobile) $main.toggleClass('sidebar-closed');
+                $overlay.toggle(mobile && !$sidebar.hasClass('closed'));
+            });
+            $overlay.on('click', function () { $sidebar.addClass('closed'); $overlay.hide(); });
+            $('table.admin-datatable').each(function () {
+                if (!$(this).find('tbody tr td[colspan]').length && window.DataTable) {
+                    new DataTable(this, {
+                        pageLength: 10, lengthMenu: [5, 10, 25, 50],
+                        language: {
+                            search: 'Cari:', lengthMenu: 'Tampilkan _MENU_',
+                            info: 'Menampilkan _START_ - _END_ dari _TOTAL_ data',
+                            infoEmpty: 'Tidak ada data', zeroRecords: 'Data tidak ditemukan',
+                            paginate: { first: 'Awal', last: 'Akhir', next: '›', previous: '‹' }
+                        }
+                    });
+                }
+            });
+
+            function feedback(message, success) {
+                $('#ajaxFeedback').removeAttr('hidden').toggleClass('alert-success', success).toggleClass('alert-danger', !success)
+                    .html('<i class="fas ' + (success ? 'fa-check-circle' : 'fa-exclamation-circle') + '"></i> ' + $('<div>').text(message || 'Permintaan gagal diproses.').html());
+            }
+            $(document).on('submit', 'form[data-ajax-form], form[data-ajax-delete]', function (event) {
+                event.preventDefault();
+                var form = this, $form = $(form);
+                if ($form.is('[data-confirm]') && !window.confirm($form.data('confirm'))) return;
+                var $button = $form.find(':submit').first(), original = $button.html();
+                $button.prop('disabled', true).html('<i class="fas fa-spinner fa-spin"></i> Memproses...');
+                $.ajax({
+                    url: $form.attr('action'), type: ($form.attr('method') || 'POST').toUpperCase(),
+                    data: $form.serialize(), headers: { 'X-Requested-With': 'XMLHttpRequest' },
+                    dataType: 'json'
+                }).done(function (result) {
+                    feedback(result.message, result.success === true);
+                    if (result.success === true) {
+                        window.setTimeout(function () {
+                            window.location.href = $form.data('ajax-redirect') || window.location.href;
+                        }, 350);
+                    }
+                }).fail(function (xhr) {
+                    var message = (xhr.responseJSON && xhr.responseJSON.message) || 'Terjadi kesalahan jaringan. Silakan coba lagi.';
+                    feedback(message, false);
+                }).always(function () { $button.prop('disabled', false).html(original); });
+            });
+        })(jQuery);
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,59 @@
+@model Newtonsoft.Json.Linq.JObject
+@{
+    ViewData["Title"] = "Edit Pengumuman";
+    var users = ViewBag.Users as Newtonsoft.Json.Linq.JArray ?? new Newtonsoft.Json.Linq.JArray();
+    var positions = ViewBag.Positions as Newtonsoft.Json.Linq.JArray ?? new Newtonsoft.Json.Linq.JArray();
+    var targetType = Model["targetType"]?.ToString() ?? "all";
+    var targetIds = (Model["targetIds"]?.ToString() ?? "").Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+}
+
+<div class="an-card" style="max-width:760px;">
+    <h3><i class="fas fa-edit"></i> Edit Pengumuman</h3>
+    <form method="post" asp-action="AnnouncementEdit" asp-route-id="@Model["id"]" data-ajax-form data-ajax-redirect="@Url.Action("Announcements", "Admin")">
+        <input type="hidden" name="targetType" id="targetType" value="@targetType" />
+        <input type="hidden" name="targetIds" id="targetIds" value="@string.Join(",", targetIds)" />
+        <div style="margin-bottom:.75rem;">
+            <label class="an-label">Judul *</label>
+            <input class="an-input" name="title" value="@Model["title"]" required />
+        </div>
+        <div style="margin-bottom:.75rem;">
+            <label class="an-label">Isi Pengumuman *</label>
+            <textarea class="an-textarea" name="content" required>@Model["content"]</textarea>
+        </div>
+        <div style="margin-bottom:.75rem;">
+            <label class="an-label">Target</label>
+            <select class="an-input" id="targetSelect" onchange="changeTarget(this.value)">
+                @if (targetType == "all") { <option value="all" selected>Semua karyawan</option> } else { <option value="all">Semua karyawan</option> }
+                @if (targetType == "users") { <option value="users" selected>Karyawan tertentu</option> } else { <option value="users">Karyawan tertentu</option> }
+                @if (targetType == "position") { <option value="position" selected>Jabatan tertentu</option> } else { <option value="position">Jabatan tertentu</option> }
+            </select>
+            <div id="userOptions" style="margin-top:.5rem;@(targetType == "users" ? "" : "display:none;")">
+                @foreach (var u in users)
+                {
+                    <label style="display:block;"><input type="checkbox" class="target-cb" data-type="users" value="@u["id"]" @if (targetType == "users" && targetIds.Contains(u["id"]?.ToString() ?? "")) { <text>checked</text> } onchange="syncTargets()" /> @u["name"]</label>
+                }
+            </div>
+            <div id="positionOptions" style="margin-top:.5rem;@(targetType == "position" ? "" : "display:none;")">
+                @foreach (var p in positions)
+                {
+                    <label style="display:block;"><input type="checkbox" class="target-cb" data-type="position" value="@p["id"]" @if (targetType == "position" && targetIds.Contains(p["id"]?.ToString() ?? "")) { <text>checked</text> } onchange="syncTargets()" /> @p["name"]</label>
+                }
+            </div>
+        </div>
+        <button class="an-btn an-btn-primary" type="submit">Simpan</button>
+        <a class="an-btn an-btn-outline" asp-action="Announcements">Batal</a>
+    </form>
+</div>
+@section Scripts { <script>
+    function changeTarget(type) {
+        document.getElementById('targetType').value = type;
+        document.getElementById('userOptions').style.display = type === 'users' ? '' : 'none';
+        document.getElementById('positionOptions').style.display = type === 'position' ? '' : 'none';
+        syncTargets();
+    }
+    function syncTargets() {
+        var type = document.getElementById('targetType').value;
+        var ids = Array.from(document.querySelectorAll('.target-cb:checked')).filter(x => x.dataset.type === type).map(x => x.value);
+        document.getElementById('targetIds').value = type === 'all' ? '' : ids.join(',');
+    }
+</script> }

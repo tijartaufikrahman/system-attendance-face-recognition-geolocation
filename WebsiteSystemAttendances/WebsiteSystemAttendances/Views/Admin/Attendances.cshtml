@@ -1,0 +1,46 @@
+@model Newtonsoft.Json.Linq.JArray
+@{
+    ViewData["Title"] = "Rekap Presensi";
+
+    string FormatDate(Newtonsoft.Json.Linq.JToken? token, string format)
+    {
+        if (token == null || token.Type == Newtonsoft.Json.Linq.JTokenType.Null)
+            return "-";
+        return DateTime.TryParse(token.ToString(), out var value)
+            ? value.ToString(format)
+            : "-";
+    }
+}
+
+<div style="margin-bottom:1.5rem;">
+    <p style="color:#6b7280;font-size:0.85rem;">Total: @(Model?.Count ?? 0) data presensi</p>
+</div>
+
+<div class="admin-table-card"><table class="admin-datatable">
+    <thead><tr><th>#</th><th>Pegawai</th><th>Tanggal</th><th>Jam Masuk</th><th>Jam Pulang</th><th>Status</th><th>Lembur</th><th>Aksi</th></tr></thead>
+    <tbody>
+    @if (Model != null && Model.Count > 0) { int i=1; @foreach(var a in Model) { <tr>
+        <td>@i</td>
+        <td>@(a["user"]?["name"]?.ToString() ?? $"User ID: {a["userId"]}")</td>
+        <td>@FormatDate(a["date"], "dd/MM/yyyy")</td>
+        <td>@FormatDate(a["clockIn"], "HH:mm")</td>
+        <td>@FormatDate(a["clockOut"], "HH:mm")</td>
+        <td><span class="badge badge-active">@a["status"]</span></td>
+        <td>
+            @if (a["isOvertime"]?.ToObject<bool>() == true) { <span class="badge" style="background:#fef3c7;color:#92400e;">Lembur</span> }
+            else { <span style="color:#9ca3af;">-</span> }
+        </td>
+        <td>
+            <form asp-controller="Admin" asp-action="AttendanceDelete" method="post" data-ajax-delete
+                  data-confirm="Hapus data presensi ini? Data yang dihapus tidak dapat dikembalikan."
+                  data-ajax-redirect="@Url.Action("Attendances")">
+                <input type="hidden" name="id" value="@a["id"]" />
+                <button type="submit" class="btn btn-sm btn-outline-danger" title="Hapus presensi">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </form>
+        </td>
+    </tr> i++; } }
+    else { <tr><td colspan="8" style="text-align:center;padding:2rem;color:#9ca3af;">Belum ada data presensi</td></tr> }
+    </tbody>
+</table></div>

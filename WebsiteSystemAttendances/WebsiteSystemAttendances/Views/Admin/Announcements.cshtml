@@ -1,0 +1,358 @@
+@model Newtonsoft.Json.Linq.JArray
+@{ ViewData["Title"] = "Pengumuman";
+   var users = ViewBag.Users as Newtonsoft.Json.Linq.JArray ?? new Newtonsoft.Json.Linq.JArray();
+   var positions = ViewBag.Positions as Newtonsoft.Json.Linq.JArray ?? new Newtonsoft.Json.Linq.JArray(); }
+
+@section Styles { <style>
+    .an-wrap { display:flex; gap:1.25rem; align-items:flex-start; }
+    .an-left { flex:1; min-width:0; }
+    .an-right { width:390px; flex-shrink:0; position:sticky; top:1rem; }
+
+    .an-card { background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:1.25rem; box-shadow:0 4px 14px rgba(15,23,42,.04); }
+    .an-card h3 { font-size:0.85rem; font-weight:600; color:#111827; margin:0 0 0.75rem 0; display:flex; align-items:center; gap:0.5rem; }
+    .an-card h3 i { color:#6b7280; font-size:0.8rem; }
+    .an-filter-subtitle { color:#6b7280; font-size:.7rem; line-height:1.45; margin:-.4rem 0 .85rem; }
+
+    .an-label { display:block; font-size:0.72rem; font-weight:500; color:#374151; margin-bottom:0.3rem; }
+    .an-input { width:100%; padding:0.45rem 0.65rem; border:1px solid #d1d5db; border-radius:6px; font-size:0.8rem; color:#111827; background:#fff; outline:none; }
+    .an-input:focus { border-color:#111827; }
+    .an-textarea { width:100%; padding:0.45rem 0.65rem; border:1px solid #d1d5db; border-radius:6px; font-size:0.8rem; color:#111827; background:#fff; outline:none; resize:vertical; min-height:100px; }
+    .an-textarea:focus { border-color:#111827; }
+    .an-hint { font-size:0.65rem; color:#9ca3af; margin-top:0.15rem; }
+
+    .an-btn { padding:0.4rem 0.85rem; border-radius:6px; font-size:0.78rem; font-weight:500; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:0.3rem; }
+    .an-btn-primary { background:#111827; color:#fff; }
+    .an-btn-primary:hover { background:#1f2937; }
+    .an-btn-outline { background:#fff; color:#374151; border:1px solid #d1d5db; }
+    .an-btn-outline:hover { background:#f9fafb; }
+    .an-btn-danger { background:#fff; color:#dc2626; border:1px solid #fecaca; font-size:0.72rem; padding:0.3rem 0.6rem; }
+    .an-btn-danger:hover { background:#fef2f2; }
+
+    /* Tabs */
+    .an-tabs { display:grid; grid-template-columns:repeat(3, 1fr); gap:.3rem; padding:.25rem; background:#f3f4f6; border-radius:8px; margin-bottom:.75rem; }
+    .an-tab { padding:.55rem .35rem; text-align:center; font-size:0.72rem; font-weight:600; color:#6b7280; background:transparent; border:0; border-radius:6px; cursor:pointer; transition:all 0.15s; }
+    .an-tab:last-child { border-right:none; }
+    .an-tab:hover { background:#e5e7eb; color:#374151; }
+    .an-tab.active { background:#111827; color:#fff; box-shadow:0 2px 5px rgba(17,24,39,.18); }
+
+    /* Count */
+    .an-count { font-size:0.7rem; color:#6b7280; margin-bottom:0.4rem; display:flex; align-items:center; justify-content:space-between; }
+    .an-count strong { color:#111827; font-weight:600; }
+    .an-count-all { font-size:0.7rem; color:#374151; margin-bottom:0.65rem; padding:.65rem .7rem; background:#f0f9ff; border:1px solid #bae6fd; border-radius:7px; line-height:1.45; }
+
+    /* Search */
+    .an-search { width:100%; padding:0.4rem 0.65rem; border:1px solid #d1d5db; border-radius:6px; font-size:0.78rem; outline:none; margin-bottom:0.4rem; }
+    .an-search:focus { border-color:#111827; }
+
+    /* Check list */
+    .an-chk-list { border:1px solid #e5e7eb; border-radius:7px; overflow:hidden; background:#fff; }
+    .an-chk-scroll { max-height:235px; overflow-y:auto; }
+    .an-chk-all { padding:0.4rem 0.75rem; border-bottom:1px solid #e5e7eb; background:#f9fafb; display:flex; align-items:center; gap:0.5rem; font-size:0.72rem; font-weight:500; color:#374151; cursor:pointer; position:sticky; top:0; z-index:1; }
+    .an-chk-all:hover { background:#f3f4f6; }
+    .an-chk-item { display:flex; align-items:center; gap:0.5rem; padding:0.35rem 0.75rem; border-bottom:1px solid #f3f4f6; font-size:0.78rem; color:#374151; }
+    .an-chk-item:last-child { border-bottom:none; }
+    .an-chk-item:hover { background:#f9fafb; }
+    .an-chk-item input[type="checkbox"] { accent-color:#111827; cursor:pointer; }
+    .an-chk-item label { cursor:pointer; margin:0; font-weight:400; flex:1; }
+    .an-chk-item .an-sub { font-size:0.65rem; color:#9ca3af; }
+
+    /* Position items - can be longer */
+    .an-pos-item { padding:0.4rem 0.75rem; }
+
+    .an-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }
+    .an-header h2 { font-size:1rem; font-weight:600; color:#111827; margin:0; }
+    .an-header p { color:#6b7280; font-size:0.75rem; margin:0.2rem 0 0 0; }
+
+    .an-table-card { background:#fff; border:1px solid #e8eef5; border-radius:14px; box-shadow:0 6px 20px rgba(15,23,42,.04); overflow-x:auto; }
+    .an-table { width:100%; min-width:720px; border-collapse:separate; border-spacing:0; }
+    .an-table th { padding:13px 16px; text-align:left; font-size:0.67rem; font-weight:600; color:#64748b; text-transform:uppercase; letter-spacing:.055em; background:#f8fafc; border-bottom:1px solid #e2e8f0; }
+    .an-table td { padding:13px 16px; font-size:0.8rem; color:#334155; border-top:1px solid #eef2f7; }
+    .an-table tr:last-child td { border-bottom:none; }
+    .an-table tr:hover td { background:#f8fafc; }
+
+    .an-badge { display:inline-block; padding:0.1rem 0.4rem; border-radius:10px; font-size:0.65rem; font-weight:500; background:#f3f4f6; color:#6b7280; }
+    .an-badge-all { background:#dbeafe; color:#1e40af; }
+
+    .an-empty { text-align:center; padding:2rem 1rem; color:#9ca3af; }
+    .an-empty i { font-size:1.5rem; margin-bottom:0.5rem; display:block; }
+    .an-empty p { font-size:0.82rem; margin:0; }
+
+    .an-panel { display:none; animation:an-fade-in .15s ease-in; }
+    .an-panel.active { display:block; }
+    @@keyframes an-fade-in { from { opacity:.35; transform:translateY(2px); } to { opacity:1; transform:translateY(0); } }
+    @@media (max-width: 900px) {
+        .an-wrap { flex-direction:column; }
+        .an-left, .an-right { width:100%; }
+        .an-right { position:static; }
+    }
+</style> }
+
+<div class="an-header">
+    <div>
+        <h2>Pengumuman</h2>
+        <p>Kirim pengumuman ke karyawan berdasarkan filter</p>
+    </div>
+    <button class="an-btn an-btn-primary" onclick="showForm()"><i class="fas fa-plus"></i> Buat Pengumuman</button>
+</div>
+
+<!-- FORM -->
+<div id="createForm" style="display:none;">
+    <div class="an-wrap">
+        <!-- Kiri: Form -->
+        <div class="an-left">
+            <div class="an-card" style="margin-bottom:0;">
+                <h3><i class="fas fa-bullhorn"></i> Buat Pengumuman</h3>
+                <form method="post" asp-controller="Admin" asp-action="AnnouncementCreate" data-ajax-form data-ajax-redirect="@Url.Action("Announcements", "Admin")">
+                    <input type="hidden" name="targetType" id="targetType" value="all" />
+                    <input type="hidden" name="targetIds" id="targetIds" value="" />
+
+                    <div style="margin-bottom:0.75rem;">
+                        <label class="an-label">Judul *</label>
+                        <input type="text" class="an-input" name="title" required placeholder="Judul pengumuman..." />
+                    </div>
+
+                    <div style="margin-bottom:0.75rem;">
+                        <label class="an-label">Isi Pengumuman *</label>
+                        <textarea class="an-textarea" name="content" required placeholder="Tulis pengumuman di sini..."></textarea>
+                    </div>
+
+                    <div style="display:flex;gap:0.5rem;margin-top:0.5rem;">
+                        <button type="submit" class="an-btn an-btn-primary"><i class="fas fa-paper-plane"></i> Kirim</button>
+                        <button type="button" class="an-btn an-btn-outline" onclick="hideForm()">Batal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Kanan: Filter -->
+        <div class="an-right">
+            <div class="an-card" style="margin-bottom:0;">
+                <h3><i class="fas fa-users"></i> Kirim Ke</h3>
+                <p class="an-filter-subtitle">Pilih penerima pengumuman. Anda dapat memilih semua karyawan, beberapa karyawan, atau berdasarkan jabatan.</p>
+
+                <div class="an-tabs">
+                    <div class="an-tab active" data-tab="all" onclick="switchTab('all', this)">Semua</div>
+                    <div class="an-tab" data-tab="users" onclick="switchTab('users', this)">Karyawan</div>
+                    <div class="an-tab" data-tab="position" onclick="switchTab('position', this)">Jabatan</div>
+                </div>
+
+                <!-- Panel: Semua -->
+                <div class="an-panel active" id="panel-all">
+                    <div class="an-count-all">
+                        <i class="fas fa-info-circle" style="margin-right:0.3rem;"></i>
+                        Pengumuman akan dikirim ke <strong>semua karyawan</strong> (<span id="allCount">0</span> orang)
+                    </div>
+                    <div class="an-chk-list">
+                        <div class="an-chk-scroll" style="max-height:250px;">
+                            @foreach (var u in users)
+                            {
+                                var platform = "";
+                                try { platform = u["role"]?["platform"]?.ToString() ?? ""; } catch { platform = ""; }
+                                if (platform.Equals("mobile", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    <div class="an-chk-item" style="background:#f0f9ff;">
+                                        <input type="checkbox" checked disabled style="accent-color:#111827;" />
+                                        <label>
+                                            <div>@u["name"]</div>
+                                            <div class="an-sub">@u["email"]</div>
+                                        </label>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel: Karyawan -->
+                <div class="an-panel" id="panel-users">
+                    <div class="an-count"><strong id="userCount">0</strong> dipilih dari <span id="userTotal">0</span></div>
+                    <input type="text" class="an-search" id="userSearch" placeholder="Cari nama / email..." onkeyup="filterList('user')" />
+                    <div class="an-chk-list">
+                        <div class="an-chk-all">
+                            <input type="checkbox" id="chkAllUser" onchange="toggleAllTab('user', this)" />
+                            <label for="chkAllUser" style="cursor:pointer;">Pilih Semua</label>
+                        </div>
+                        <div class="an-chk-scroll" id="userScroll">
+                            @foreach (var u in users)
+                            {
+                                var platform = "";
+                                try { platform = u["role"]?["platform"]?.ToString() ?? ""; } catch { platform = ""; }
+                                if (platform.Equals("mobile", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    <div class="an-chk-item an-user-row" data-name="@u["name"]?.ToString().ToLower() @u["email"]?.ToString().ToLower()">
+                                        <input type="checkbox" class="target-cb" data-type="user" value="@u["id"]" onchange="onChkChange()" />
+                                        <label>
+                                            <div>@u["name"]</div>
+                                            <div class="an-sub">@u["email"]</div>
+                                        </label>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel: Jabatan -->
+                <div class="an-panel" id="panel-position">
+                    <div class="an-count"><strong id="posCount">0</strong> dipilih dari <span id="posTotal">0</span></div>
+                    <input type="text" class="an-search" id="posSearch" placeholder="Cari jabatan..." onkeyup="filterList('pos')" />
+                    <div class="an-chk-list">
+                        <div class="an-chk-all">
+                            <input type="checkbox" id="chkAllPos" onchange="toggleAllTab('pos', this)" />
+                            <label for="chkAllPos" style="cursor:pointer;">Pilih Semua</label>
+                        </div>
+                        <div class="an-chk-scroll" id="posScroll">
+                            @foreach (var p in positions)
+                            {
+                                <div class="an-chk-item an-pos-row" data-name="@p["name"]?.ToString().ToLower()">
+                                    <input type="checkbox" class="target-cb" data-type="position" value="@p["id"]" onchange="onChkChange()" />
+                                    <label>
+                                        <div>@p["name"]</div>
+                                    </label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TABEL -->
+<div id="tableSection">
+    <div class="admin-table-card an-table-card p-3">
+        <table class="an-table admin-datatable">
+            <thead>
+                <tr><th>#</th><th>Judul</th><th>Isi</th><th>Target</th><th>Tanggal</th><th>Aksi</th></tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Count > 0)
+                {
+                    int i = 1;
+                    @foreach (var a in Model)
+                    {
+                        var targetType = a["targetType"]?.ToString() ?? "all";
+                        var targetLabel = targetType switch {
+                            "users" => "Karyawan",
+                            "position" => "Jabatan",
+                            _ => "Semua"
+                        };
+                        var targetBadgeClass = targetType == "all" ? "an-badge an-badge-all" : "an-badge";
+                        <tr>
+                            <td>@i</td>
+                            <td><strong>@a["title"]</strong></td>
+                            <td style="max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">@a["content"]</td>
+                            <td><span class="@targetBadgeClass">@targetLabel</span></td>
+                            <td>@(a["createdAt"] != null ? Convert.ToDateTime(a["createdAt"]).ToString("dd/MM/yyyy HH:mm") : "-")</td>
+                            <td>
+                                <a asp-controller="Admin" asp-action="AnnouncementEdit" asp-route-id="@a["id"]" class="an-btn an-btn-outline"><i class="fas fa-edit"></i></a>
+                                <form asp-controller="Admin" asp-action="AnnouncementDelete" asp-route-id="@a["id"]" method="post" class="d-inline" data-ajax-delete data-confirm="Hapus pengumuman ini?">
+                                    <button type="submit" class="an-btn an-btn-danger"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                }
+                else
+                {
+                    <tr><td colspan="6">
+                        <div class="an-empty">
+                            <i class="fas fa-bullhorn"></i>
+                            <p>Belum ada pengumuman</p>
+                            <button class="an-btn an-btn-primary" onclick="showForm()" style="margin-top:0.5rem;"><i class="fas fa-plus"></i> Buat Sekarang</button>
+                        </div>
+                    </td></tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts { <script>
+    var currentTab = 'all';
+
+    // Init counts
+    document.addEventListener('DOMContentLoaded', function() {
+        var allUsers = document.querySelectorAll('#panel-all .an-chk-item').length;
+        document.getElementById('allCount').textContent = allUsers;
+
+        var userItems = document.querySelectorAll('.an-user-row').length;
+        document.getElementById('userTotal').textContent = userItems;
+
+        var posItems = document.querySelectorAll('.an-pos-row').length;
+        document.getElementById('posTotal').textContent = posItems;
+    });
+
+    function showForm() {
+        document.getElementById('createForm').style.display = 'block';
+        document.getElementById('tableSection').style.display = 'none';
+    }
+    function hideForm() {
+        document.getElementById('createForm').style.display = 'none';
+        document.getElementById('tableSection').style.display = '';
+    }
+
+    function switchTab(tab, el) {
+        currentTab = tab;
+        document.getElementById('targetType').value = tab;
+        document.querySelectorAll('.an-tab').forEach(t => t.classList.remove('active'));
+        el.classList.add('active');
+        document.querySelectorAll('.an-panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('panel-' + tab).classList.add('active');
+        updateCount();
+    }
+
+    function toggleAllTab(prefix, src) {
+        var selector = prefix === 'user' ? '.an-user-row .target-cb' : '.an-pos-row .target-cb';
+        document.querySelectorAll(selector).forEach(cb => cb.checked = src.checked);
+        updateCount();
+    }
+
+    function onChkChange() {
+        updateCount();
+        syncSelectAll();
+    }
+
+    function updateCount() {
+        var userCbs = document.querySelectorAll('.an-user-row .target-cb:checked');
+        var posCbs = document.querySelectorAll('.an-pos-row .target-cb:checked');
+        document.getElementById('userCount').textContent = userCbs.length;
+        document.getElementById('posCount').textContent = posCbs.length;
+
+        var ids = [];
+        if (currentTab === 'users') {
+            ids = Array.from(userCbs).map(cb => cb.value);
+        } else if (currentTab === 'position') {
+            ids = Array.from(posCbs).map(cb => cb.value);
+        }
+        document.getElementById('targetIds').value = ids.join(',');
+    }
+
+    function syncSelectAll() {
+        var userAll = document.querySelectorAll('.an-user-row .target-cb').length;
+        var userChecked = document.querySelectorAll('.an-user-row .target-cb:checked').length;
+        document.getElementById('chkAllUser').checked = userAll > 0 && userAll === userChecked;
+
+        var posAll = document.querySelectorAll('.an-pos-row .target-cb').length;
+        var posChecked = document.querySelectorAll('.an-pos-row .target-cb:checked').length;
+        document.getElementById('chkAllPos').checked = posAll > 0 && posAll === posChecked;
+    }
+
+    function filterList(type) {
+        var q = document.getElementById(type === 'user' ? 'userSearch' : 'posSearch').value.toLowerCase();
+        var cls = type === 'user' ? '.an-user-row' : '.an-pos-row';
+        document.querySelectorAll(cls).forEach(item => {
+            item.style.display = (item.getAttribute('data-name') || '').includes(q) ? '' : 'none';
+        });
+    }
+
+    document.querySelector('#createForm form').addEventListener('submit', function(e) {
+        var type = document.getElementById('targetType').value;
+        if (type !== 'all' && !document.getElementById('targetIds').value) {
+            e.preventDefault();
+            alert('Pilih minimal 1 ' + (type === 'users' ? 'karyawan' : 'jabatan') + '!');
+        }
+    });
+</script> }
